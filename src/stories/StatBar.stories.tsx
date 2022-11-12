@@ -1,8 +1,8 @@
 import { ComponentStory } from '@storybook/react';
-import StatBar from 'components/StatBar/StatBar';
-import { POKEMON_STATS } from 'enums';
 
-const options = Object.values(POKEMON_STATS);
+import StatBar from 'components/StatBar/StatBar';
+
+import { POKEMON_STATS } from 'enums';
 
 export default {
   title: 'Components/StatBar',
@@ -10,7 +10,6 @@ export default {
   argTypes: {
     stat: {
       control: 'select',
-      options: options,
     },
     value: {
       control: {
