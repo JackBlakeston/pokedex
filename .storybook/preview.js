@@ -1,3 +1,4 @@
+import { TYPE_COLORS } from '../src/enums/index';
 import '../src/styles/styles.scss';
 
 export const parameters = {
@@ -8,6 +9,6 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-    presetColors: [{ color: '#ff4785', title: 'Coral' }, 'rgba(0, 159, 183, 1)', '#fe4a49'],
+    presetColors: Object.values(TYPE_COLORS),
   },
 };

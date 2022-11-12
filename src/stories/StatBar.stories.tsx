@@ -19,12 +19,6 @@ export default {
         step: 1,
       },
     },
-    color: {
-      control: {
-        type: 'color',
-        presetColors: ['red', 'green'],
-      },
-    },
   },
 };
 
