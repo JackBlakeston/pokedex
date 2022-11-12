@@ -1,6 +1,9 @@
+import { IPokemon } from 'interfaces';
+
 interface IProps {
-  pokemon: any;
+  pokemon: IPokemon;
 }
+
 const StatDisplay = ({ pokemon }: IProps) => {
   return <></>;
 };

@@ -1,3 +1,5 @@
+import { POKEMON_STATS } from 'enums';
+
 export interface IPokemon {
   id: number;
   name: string;
@@ -10,7 +12,7 @@ export interface IPokemon {
 }
 
 export interface IStat {
-  name: string;
+  type: POKEMON_STATS;
   value: number;
 }
 

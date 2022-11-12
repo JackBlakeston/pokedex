@@ -1,0 +1,33 @@
+export enum POKEMON_TYPES {
+  NORMAL = 'normal',
+  FIGHTING = 'fighting',
+  FLYING = 'flying',
+  POISON = 'poison',
+  GROUND = 'ground',
+  ROCK = 'rock',
+  BUG = 'bug',
+  GHOST = 'ghost',
+  STEEL = 'steel',
+  FIRE = 'fire',
+  WATER = 'water',
+  GRASS = 'grass',
+  ELECTRIC = 'electric',
+  PSYCHIC = 'psychic',
+  ICE = 'ice',
+  DRAGON = 'dragon',
+  DARK = 'dark',
+  FAIRY = 'fairy',
+  UNKNOWN = 'unknown',
+  SHADOW = 'shadow',
+}
+
+export enum POKEMON_STATS {
+  HP = 'HP',
+  ATTACK = 'Atk',
+  DEFENSE = 'Def',
+  SPECIAL_ATTACK = 'SpAtk',
+  SPECIAL_DEFENSE = 'SpDef',
+  SPEED = 'Speed',
+  ACCURACY = 'Acc',
+  EVASION = 'Ev',
+}
