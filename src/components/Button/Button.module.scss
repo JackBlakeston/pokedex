@@ -8,6 +8,8 @@
   border: 1px solid var(--buttonColor);
   border-radius: 6px;
   cursor: pointer;
+  user-select: none;
+  transition: 0.15s all ease;
 
   &:hover,
   &:active {
@@ -16,7 +18,7 @@
   }
 
   &:active {
-    opacity: 0.6;
+    transform: translateY(5%);
   }
 
   &.small {
