@@ -1,6 +1,6 @@
 // Global imports
-@use 'global';
-@use 'variables' as var;
+@import 'variables';
+@import 'global';
 
 // Component modules
-@use 'components/StatBar/StatBar.module';
+@import 'components/StatBar/StatBar.module';

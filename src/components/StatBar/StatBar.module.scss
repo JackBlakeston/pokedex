@@ -1,4 +1,4 @@
-@use '../../styles/variables';
+@import '../../styles/variables';
 
 .mainContainer {
   display: flex;
@@ -7,14 +7,12 @@
 
   span {
     width: 30px;
-    &:first-child {
-    }
   }
 
   .percentageBarContainer {
     width: 100px;
     height: 10px;
-    background-color: variables.$background3;
+    background-color: $background3;
     border-radius: 10px;
     .percentageBar {
       border-radius: 10px;
