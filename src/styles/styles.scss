@@ -1,4 +1,6 @@
 // Global imports
+@use 'global';
 @use 'variables' as var;
+
 // Component modules
 @use 'components/StatBar/StatBar.module';
