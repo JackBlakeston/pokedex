@@ -6,7 +6,12 @@
   gap: 10px;
 
   span {
-    width: 40px;
+    &:first-child {
+      width: 45px;
+    }
+    &:last-child {
+      width: 20px;
+    }
   }
 
   .percentageBarContainer {
