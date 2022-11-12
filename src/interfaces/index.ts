@@ -2,14 +2,14 @@ export interface IPokemon {
   id: number;
   name: string;
   imgUrl: string;
-  stats: IPokemonStat[];
+  stats: IStat[];
   types: string[];
   abilities: string[];
   weight: number;
   height: number;
 }
 
-export interface IPokemonStat {
+export interface IStat {
   name: string;
   value: number;
 }

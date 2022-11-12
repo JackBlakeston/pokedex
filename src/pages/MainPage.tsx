@@ -9,7 +9,11 @@ const MainPage = () => {
   console.log(currentPage);
   console.log(pokemon);
 
-  return <PokemonGrid />;
+  return (
+    <>
+      <PokemonGrid />
+    </>
+  );
 };
 
 export default MainPage;
