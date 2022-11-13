@@ -2,7 +2,7 @@ import { ComponentStory } from '@storybook/react';
 
 import PokemonCard from 'components/PokemonCard/PokemonCard';
 
-import { bulbasaurData, charizardData, pikachuData } from './assets/pokemonData';
+import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from './assets/pokemonData';
 
 export default {
   title: 'Components/PokemonCard',
@@ -27,4 +27,16 @@ export const Charizard = Template.bind({});
 
 Charizard.args = {
   pokemon: charizardData,
+};
+
+export const Blastoise = Template.bind({});
+
+Blastoise.args = {
+  pokemon: blastoiseData,
+};
+
+export const Bellsprout = Template.bind({});
+
+Bellsprout.args = {
+  pokemon: bellsproutData,
 };

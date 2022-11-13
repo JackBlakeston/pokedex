@@ -110,3 +110,77 @@ export const charizardData = {
   height: 17,
   color: '#b79b7c',
 };
+
+export const blastoiseData = {
+  id: '009',
+  name: 'blastoise',
+  imgUrl: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/009.png',
+  stats: [
+    {
+      name: POKEMON_STATS.HP,
+      value: 79,
+    },
+    {
+      name: POKEMON_STATS.ATTACK,
+      value: 83,
+    },
+    {
+      name: POKEMON_STATS.DEFENSE,
+      value: 100,
+    },
+    {
+      name: POKEMON_STATS.SPECIAL_ATTACK,
+      value: 85,
+    },
+    {
+      name: POKEMON_STATS.SPECIAL_DEFENSE,
+      value: 105,
+    },
+    {
+      name: POKEMON_STATS.SPEED,
+      value: 78,
+    },
+  ],
+  types: [POKEMON_TYPES.WATER],
+  abilities: ['torrent', 'rain-dish'],
+  weight: 855,
+  height: 16,
+  color: '#91939e',
+};
+
+export const bellsproutData = {
+  id: '069',
+  name: 'bellsprout',
+  imgUrl: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/069.png',
+  stats: [
+    {
+      name: POKEMON_STATS.HP,
+      value: 50,
+    },
+    {
+      name: POKEMON_STATS.ATTACK,
+      value: 75,
+    },
+    {
+      name: POKEMON_STATS.DEFENSE,
+      value: 35,
+    },
+    {
+      name: POKEMON_STATS.SPECIAL_ATTACK,
+      value: 70,
+    },
+    {
+      name: POKEMON_STATS.SPECIAL_DEFENSE,
+      value: 30,
+    },
+    {
+      name: POKEMON_STATS.SPEED,
+      value: 40,
+    },
+  ],
+  types: [POKEMON_TYPES.GRASS, POKEMON_TYPES.POISON],
+  abilities: ['chlorophyll', 'gluttony'],
+  weight: 40,
+  height: 7,
+  color: '#afbf81',
+};
