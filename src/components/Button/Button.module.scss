@@ -1,10 +1,12 @@
+@import '/src/styles/variables';
+
 .mainContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--buttonColor);
   color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-shadow: $shadow-medium;
   border: 1px solid var(--buttonColor);
   border-radius: 6px;
   cursor: pointer;

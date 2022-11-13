@@ -12,7 +12,7 @@ export interface IPokemon {
 }
 
 export interface IStat {
-  type: POKEMON_STATS;
+  name: POKEMON_STATS;
   value: number;
 }
 
