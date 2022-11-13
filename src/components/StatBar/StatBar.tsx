@@ -3,15 +3,15 @@ import classes from './StatBar.module.scss';
 import { POKEMON_STATS } from 'enums';
 
 interface IProps {
-  stat: POKEMON_STATS;
+  statName: POKEMON_STATS;
   value: number;
   color: string;
 }
-const StatBar = ({ stat, value, color }: IProps) => {
-  const width = `${value}%`;
+const StatBar = ({ statName, value, color }: IProps) => {
+  const width = `${value / 1.5}%`;
   return (
     <div className={classes.mainContainer}>
-      <span>{stat}</span>
+      <span>{statName}</span>
       <span>{value}</span>
       <div className={classes.percentageBarContainer}>
         <div className={classes.percentageBar} style={{ width, backgroundColor: color }}></div>

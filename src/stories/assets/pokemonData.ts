@@ -109,6 +109,7 @@ export const charizardData = {
   weight: 905,
   height: 17,
   color: '#b79b7c',
+  colo2: '#b79b7c',
 };
 
 export const blastoiseData = {

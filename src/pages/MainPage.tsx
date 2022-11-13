@@ -4,7 +4,7 @@ import usePokemonPages from 'hooks/usePokemonPages';
 
 const MainPage = () => {
   const currentPage = usePokemonPages();
-  const pokemon = usePokemon(69);
+  const pokemon = usePokemon(6);
 
   console.log(currentPage);
   console.log(pokemon);

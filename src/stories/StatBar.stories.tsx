@@ -15,7 +15,7 @@ export default {
       control: {
         type: 'range',
         min: 0,
-        max: 100,
+        max: 150,
         step: 1,
       },
     },
@@ -27,7 +27,7 @@ const Template: ComponentStory<typeof StatBar> = (args) => <StatBar {...args} />
 export const Default = Template.bind({});
 
 Default.args = {
-  stat: POKEMON_STATS.ATTACK,
+  statName: POKEMON_STATS.ATTACK,
   value: 43,
   color: 'blue',
 };
