@@ -9,6 +9,12 @@
   border-radius: $borderRadiusMedium;
   overflow: hidden;
   box-shadow: $shadowSmall;
+  cursor: pointer;
+  transition: 0.15s all ease;
+
+  &:hover {
+    transform: scale(1.03) translateY(-1.5%);
+  }
 
   .displaysContainer {
     display: flex;

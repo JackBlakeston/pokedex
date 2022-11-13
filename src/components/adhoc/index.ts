@@ -1,7 +1,7 @@
 import InfoDisplay from './InfoDisplay/InfoDisplay';
 import PokemonCard from './PokemonCard/PokemonCard';
 import PokemonDetailsModal from './PokemonDetailsModal/PokemonDetailsModal';
-import PokemonGrid from './PokemonGrid/PokemonGrid';
+import PokemonGridPage from './PokemonGridPage/PokemonGridPage';
 import PokemonImage from './PokemonImage/PokemonImage';
 import StatBarWidget from './StatBarWidget/StatBarWidget';
 import StatsDisplay from './StatsDisplay/StatsDisplay';
@@ -12,7 +12,7 @@ export {
   InfoDisplay,
   PokemonCard,
   PokemonDetailsModal,
-  PokemonGrid,
+  PokemonGridPage,
   PokemonImage,
   StatBarWidget,
   StatsDisplay,

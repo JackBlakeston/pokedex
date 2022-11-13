@@ -1,4 +1,4 @@
-import { PokemonGrid } from 'components/adhoc';
+import { PokemonGridPage } from 'components/adhoc';
 
 import usePokemon from 'hooks/usePokemon';
 import usePokemonPages from 'hooks/usePokemonPages';
@@ -10,7 +10,7 @@ const MainPage = () => {
   console.log(currentPage);
   console.log(pokemon);
 
-  return <>{/* <PokemonGrid /> */}</>;
+  return <>{/* <PokemonGridPage /> */}</>;
 };
 
 export default MainPage;
