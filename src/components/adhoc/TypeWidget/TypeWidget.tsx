@@ -7,12 +7,11 @@ interface IProps {
 }
 
 const TypeWidget = ({ type }: IProps) => {
-  const TypeWidgetStyles = {
+  const typeWidgetStyles = {
     backgroundColor: TYPE_COLORS[type],
   };
-
   return (
-    <div className={classes.mainContainer} style={TypeWidgetStyles}>
+    <div className={classes.mainContainer} style={typeWidgetStyles}>
       {type}
     </div>
   );

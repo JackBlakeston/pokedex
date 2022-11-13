@@ -17,6 +17,10 @@ export interface IStat {
   value: number;
 }
 
+export interface IUrlListItem {
+  url: string;
+}
+
 export interface IAbilityRes {
   ability: IResponseItem;
   is_hidden: boolean;

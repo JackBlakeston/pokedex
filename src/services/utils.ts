@@ -11,6 +11,7 @@ interface IResponseData {
 
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
   const { name, height, weight } = data;
+
   const abilities = data?.abilities?.map((abilityRes: IAbilityRes) => {
     return abilityRes.ability.name;
   });
@@ -21,7 +22,7 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     };
   });
   const types = data.types.map((typeRes: ITypeRes) => {
-    return typeRes.type.name;
+    return typeRes.type.name.toUpperCase();
   });
 
   const idPadded = id.toString().padStart(3, '0');

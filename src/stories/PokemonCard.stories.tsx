@@ -2,41 +2,25 @@ import { ComponentStory } from '@storybook/react';
 
 import { PokemonCard } from 'components/adhoc';
 
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from './assets/pokemonData';
-
 export default {
   title: 'Components/PokemonCard',
   component: PokemonCard,
+  argTypes: {
+    pokemonId: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 905,
+        step: 1,
+      },
+    },
+  },
 };
 
-const Template: ComponentStory<typeof PokemonCard> = (args) => <PokemonCard {...args} />;
+const Template: ComponentStory<typeof PokemonCard> = (args) => <PokemonCard {...args} key={JSON.stringify(args)} />;
 
-export const Bulbasaur = Template.bind({});
+export const Card = Template.bind({});
 
-Bulbasaur.args = {
-  pokemon: bulbasaurData,
-};
-
-export const Pikachu = Template.bind({});
-
-Pikachu.args = {
-  pokemon: pikachuData,
-};
-
-export const Charizard = Template.bind({});
-
-Charizard.args = {
-  pokemon: charizardData,
-};
-
-export const Blastoise = Template.bind({});
-
-Blastoise.args = {
-  pokemon: blastoiseData,
-};
-
-export const Bellsprout = Template.bind({});
-
-Bellsprout.args = {
-  pokemon: bellsproutData,
+Card.args = {
+  pokemonId: 1,
 };

@@ -5,7 +5,6 @@ import { getPokemonById } from 'services/pokeapiService';
 
 const usePokemon = (id: number) => {
   const [pokemon, setPokemon] = useState<IPokemon>();
-
   useEffect(() => {
     (async () => {
       const pokemonAux = await getPokemonById(id);
