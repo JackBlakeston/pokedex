@@ -12,18 +12,29 @@
 
   .pokemonImg {
     position: absolute;
-    top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    top: 30px;
     left: 0;
     right: 0;
+    margin-left: auto;
+    margin-right: auto;
     height: 100px;
     width: 100px;
     text-align: center;
     z-index: 2;
   }
+
+  svg {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.4;
+  }
+
   .coloredBackground {
-    height: 160px;
+    height: 170px;
     opacity: 0.4;
     filter: brightness(1.2);
   }
