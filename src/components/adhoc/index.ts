@@ -1,21 +1,21 @@
 import InfoDisplay from './InfoDisplay/InfoDisplay';
 import PokemonCard from './PokemonCard/PokemonCard';
-import PokemonDetails from './PokemonDetails/PokemonDetails';
+import PokemonDetailsModal from './PokemonDetailsModal/PokemonDetailsModal';
 import PokemonGrid from './PokemonGrid/PokemonGrid';
 import PokemonImage from './PokemonImage/PokemonImage';
 import StatBarWidget from './StatBarWidget/StatBarWidget';
-import StatDisplay from './StatDisplay/StatDisplay';
+import StatsDisplay from './StatsDisplay/StatsDisplay';
 import TypesDisplay from './TypesDisplay/TypesDisplay';
 import TypeWidget from './TypeWidget/TypeWidget';
 
 export {
   InfoDisplay,
   PokemonCard,
-  PokemonDetails,
+  PokemonDetailsModal,
   PokemonGrid,
   PokemonImage,
   StatBarWidget,
-  StatDisplay,
+  StatsDisplay,
   TypesDisplay,
   TypeWidget,
 };

@@ -13,8 +13,9 @@
     z-index: 2;
 
     &.large {
-      height: 160px;
-      width: 160px;
+      height: 200px;
+      width: 200px;
+      bottom: 55px;
     }
   }
 
@@ -30,10 +31,10 @@
     width: 150px;
 
     &.large {
-      height: 200px;
-      width: 200px;
-      left: 140px;
-      bottom: 20px;
+      height: 260px;
+      width: 260px;
+      left: 240px;
+      bottom: 40px;
     }
   }
 
@@ -43,7 +44,7 @@
     filter: brightness(1.2);
 
     &.large {
-      height: 230px;
+      height: 300px;
     }
   }
 }

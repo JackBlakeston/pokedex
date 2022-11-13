@@ -1,15 +1,15 @@
 import { ComponentStory } from '@storybook/react';
 
-import { StatDisplay } from 'components/adhoc';
+import { StatsDisplay } from 'components/adhoc';
 
 import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../assets/pokemonData';
 
 export default {
-  title: 'Components/Displays/StatDisplay',
-  component: StatDisplay,
+  title: 'Components/Displays/StatsDisplay',
+  component: StatsDisplay,
 };
 
-const Template: ComponentStory<typeof StatDisplay> = (args) => <StatDisplay {...args} />;
+const Template: ComponentStory<typeof StatsDisplay> = (args) => <StatsDisplay {...args} />;
 
 export const Bulbasaur = Template.bind({});
 
