@@ -1,7 +1,7 @@
 import classes from './PokemonCard.module.scss';
 
 import TypeDisplay from 'components/TypeDisplay/TypeDisplay';
-import { ReactComponent as PokeballMedium } from 'assets/icons/pokeball-medium.svg';
+import PokemonImage from 'components/PokemonImage/PokemonImage';
 
 import { IPokemon } from 'interfaces';
 
@@ -10,13 +10,6 @@ interface IProps {
 }
 
 const PokemonCard = ({ pokemon }: IProps) => {
-  const coloredBackgroundStyle = {
-    backgroundColor: pokemon.color,
-  };
-  const pokeballBackgroundStyle = {
-    fill: pokemon.color,
-  };
-
   const renderTypes = () => {
     return (
       <div className={classes.typesContainer}>
@@ -28,9 +21,7 @@ const PokemonCard = ({ pokemon }: IProps) => {
 
   return (
     <div className={classes.mainContainer}>
-      <img src={pokemon.imgUrl} className={classes.pokemonImg} />
-      <PokeballMedium style={pokeballBackgroundStyle} />
-      <div className={classes.coloredBackground} style={coloredBackgroundStyle} />
+      <PokemonImage pokemon={pokemon} size='small' />
       <div className={classes.displaysContainer}>
         <div>#{pokemon.id}</div>
         <div className={classes.name}>{pokemon.name}</div>

@@ -1,0 +1,49 @@
+.mainContainer {
+  position: relative;
+  .pokemonImg {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 2;
+
+    &.large {
+      height: 160px;
+      width: 160px;
+    }
+  }
+
+  .pokeballBackground {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.4;
+    height: 150px;
+    width: 150px;
+
+    &.large {
+      height: 200px;
+      width: 200px;
+      left: 140px;
+      bottom: 20px;
+    }
+  }
+
+  .coloredBackground {
+    height: 170px;
+    opacity: 0.4;
+    filter: brightness(1.2);
+
+    &.large {
+      height: 230px;
+    }
+  }
+}
