@@ -1,9 +1,9 @@
 import classes from './PokemonCard.module.scss';
 
-import PokemonImage from 'components/PokemonImage/PokemonImage';
+import { PokemonImage } from 'components/adhoc';
+import { TypesDisplay } from 'components/adhoc';
 
 import { IPokemon } from 'interfaces';
-import TypesDisplay from 'components/TypesDisplay/TypesDisplay';
 
 interface IProps {
   pokemon: IPokemon;

@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import InfoDisplay from 'components/InfoDisplay/InfoDisplay';
+import { InfoDisplay } from 'components/adhoc';
 
 import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../assets/pokemonData';
 

@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
 
-import Modal from 'components/Modal/Modal';
+import { Modal } from 'components/generic/';
 
 export default {
   title: 'Components/Generic/Modal',

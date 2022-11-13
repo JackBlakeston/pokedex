@@ -1,7 +1,7 @@
 import classes from './PokemonDetails.module.scss';
 
-import TypeWidget from 'components/TypeWidget/TypeWidget';
-import PokemonImage from 'components/PokemonImage/PokemonImage';
+import { TypeWidget } from 'components/adhoc';
+import { PokemonImage } from 'components/adhoc';
 
 import { IPokemon } from 'interfaces';
 

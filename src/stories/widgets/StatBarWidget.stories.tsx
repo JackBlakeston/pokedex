@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import StatBarWidget from 'components/StatBarWidget/StatBarWidget';
+import { StatBarWidget } from 'components/adhoc';
 
 import { POKEMON_STATS } from 'enums';
 

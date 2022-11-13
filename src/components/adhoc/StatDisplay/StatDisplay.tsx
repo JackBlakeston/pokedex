@@ -1,6 +1,6 @@
 import classes from './StatDisplay.module.scss';
 
-import StatBarWidget from 'components/StatBarWidget/StatBarWidget';
+import { StatBarWidget } from 'components/adhoc';
 
 import { IPokemon } from 'interfaces';
 

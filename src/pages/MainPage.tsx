@@ -1,4 +1,5 @@
-import PokemonGrid from 'components/PokemonGrid/PokemonGrid';
+import { PokemonGrid } from 'components/adhoc';
+
 import usePokemon from 'hooks/usePokemon';
 import usePokemonPages from 'hooks/usePokemonPages';
 

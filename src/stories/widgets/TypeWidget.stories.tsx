@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import TypeWidget from 'components/TypeWidget/TypeWidget';
+import { TypeWidget } from 'components/adhoc';
 
 import { POKEMON_TYPES } from 'enums';
 

@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import PokemonImage from 'components/PokemonImage/PokemonImage';
+import { PokemonImage } from 'components/adhoc';
 
 import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from './assets/pokemonData';
 

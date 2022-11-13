@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import StatDisplay from 'components/StatDisplay/StatDisplay';
+import { StatDisplay } from 'components/adhoc';
 
 import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../assets/pokemonData';
 
