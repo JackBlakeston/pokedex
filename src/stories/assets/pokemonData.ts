@@ -1,9 +1,9 @@
-import { POKEMON_STATS } from 'enums';
+import { POKEMON_STATS, POKEMON_TYPES } from 'enums';
 
 export const bulbasaurData = {
-  id: 1,
+  id: '001',
   name: 'bulbasaur',
-  imgUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+  imgUrl: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/001.png',
   stats: [
     {
       name: POKEMON_STATS.HP,
@@ -30,7 +30,7 @@ export const bulbasaurData = {
       value: 45,
     },
   ],
-  types: ['grass', 'poison'],
+  types: [POKEMON_TYPES.GRASS, POKEMON_TYPES.POISON],
   abilities: ['overgrow', 'chlorophyll'],
   weight: 69,
   height: 7,

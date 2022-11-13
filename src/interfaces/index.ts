@@ -1,11 +1,11 @@
-import { POKEMON_STATS } from 'enums';
+import { POKEMON_STATS, POKEMON_TYPES } from 'enums';
 
 export interface IPokemon {
-  id: number;
+  id: string;
   name: string;
   imgUrl: string;
   stats: IStat[];
-  types: string[];
+  types: POKEMON_TYPES[];
   abilities: string[];
   weight: number;
   height: number;

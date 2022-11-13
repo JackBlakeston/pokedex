@@ -1,0 +1,53 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $background1;
+  width: fit-content;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: $shadow-small;
+
+  .pokemonImg {
+    position: absolute;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    z-index: 2;
+  }
+  .coloredBackground {
+    height: 160px;
+    opacity: 0.4;
+  }
+
+  .displaysContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px 20px;
+    margin-top: -80px;
+    background-color: $background1;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    z-index: 1;
+    text-transform: capitalize;
+
+    .name {
+      font-size: 24px;
+      margin: 4px 0 10px;
+    }
+
+    .typesContainer {
+      display: flex;
+      margin-top: 8px;
+      gap: 14px;
+    }
+  }
+}
