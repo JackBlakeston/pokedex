@@ -9,6 +9,7 @@ export interface IPokemon {
   abilities: string[];
   weight: number;
   height: number;
+  color: string;
 }
 
 export interface IStat {

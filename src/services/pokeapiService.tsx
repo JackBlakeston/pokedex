@@ -1,3 +1,5 @@
+import { FastAverageColor } from 'fast-average-color';
+
 import { IAbilityRes, IPokemon, IStatRes, ITypeRes } from 'interfaces';
 
 const POKEAPI_URL = 'https://pokeapi.co/api/v2/';
@@ -32,6 +34,8 @@ export const getPokemonById = async (id: number): Promise<IPokemon> => {
   const types = data.types.map((typeRes: ITypeRes) => {
     return typeRes.type.name;
   });
+  const fac = new FastAverageColor();
+  const { hex } = await fac.getColorAsync(imgUrl);
 
   const pokemon = {
     id,
@@ -42,6 +46,7 @@ export const getPokemonById = async (id: number): Promise<IPokemon> => {
     abilities,
     weight,
     height,
+    color: hex,
   };
   return pokemon;
 };

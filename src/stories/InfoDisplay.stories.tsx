@@ -37,6 +37,7 @@ const bulbasaurData = {
   abilities: ['overgrow', 'chlorophyll'],
   weight: 69,
   height: 7,
+  color: '#6ca584',
 };
 
 export default {
