@@ -6,9 +6,9 @@
   flex-direction: column;
   background-color: $background1;
   width: fit-content;
-  border-radius: 5px;
+  border-radius: $borderRadiusMedium;
   overflow: hidden;
-  box-shadow: $shadow-small;
+  box-shadow: $shadowSmall;
 
   .pokemonImg {
     position: absolute;

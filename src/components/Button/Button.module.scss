@@ -6,9 +6,9 @@
   justify-content: center;
   background: var(--buttonColor);
   color: #ffffff;
-  box-shadow: $shadow-medium;
+  box-shadow: $shadowMedium;
   border: 1px solid var(--buttonColor);
-  border-radius: 6px;
+  border-radius: $borderRadiusMedium;
   cursor: pointer;
   user-select: none;
   transition: 0.15s all ease;

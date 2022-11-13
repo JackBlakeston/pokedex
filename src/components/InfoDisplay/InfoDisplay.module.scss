@@ -8,8 +8,8 @@
   background-color: $background2;
   width: fit-content;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: $shadow-small;
+  border-radius: $borderRadiusMedium;
+  box-shadow: $shadowSmall;
 
   .infoLine {
     display: flex;

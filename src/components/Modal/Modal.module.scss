@@ -1,0 +1,28 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.083);
+
+  .modalBox {
+    position: relative;
+    background-color: $background1;
+    padding: 20px;
+    border-radius: $borderRadiusMedium;
+    box-shadow: $shadowMedium;
+
+    .closeButton {
+      position: absolute;
+      top: -25px;
+      right: -5px;
+      cursor: pointer;
+    }
+  }
+}

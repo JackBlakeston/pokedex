@@ -7,7 +7,7 @@
   color: white;
   height: 30px;
   width: 110px;
-  border-radius: 5px;
-  box-shadow: $shadow-small;
+  border-radius: $borderRadiusMedium;
+  box-shadow: $shadowSmall;
   opacity: 0.8;
 }
