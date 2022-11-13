@@ -1,6 +1,6 @@
 import classes from './StatDisplay.module.scss';
 
-import StatBar from 'components/StatBar/StatBar';
+import StatBarWidget from 'components/StatBarWidget/StatBarWidget';
 
 import { IPokemon } from 'interfaces';
 
@@ -9,13 +9,13 @@ interface IProps {
 }
 
 const StatDisplay = ({ pokemon }: IProps) => {
-  const renderStatBars = () => {
+  const renderStatBarWidgets = () => {
     return pokemon.stats.map((stat, index) => {
-      return <StatBar statName={stat.name} value={stat.value} color={pokemon.color} key={index} />;
+      return <StatBarWidget statName={stat.name} value={stat.value} color={pokemon.color} key={index} />;
     });
   };
 
-  return <div className={classes.mainContainer}>{renderStatBars()}</div>;
+  return <div className={classes.mainContainer}>{renderStatBarWidgets()}</div>;
 };
 
 export default StatDisplay;

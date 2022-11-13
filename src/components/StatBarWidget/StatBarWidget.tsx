@@ -1,4 +1,4 @@
-import classes from './StatBar.module.scss';
+import classes from './StatBarWidget.module.scss';
 
 import { POKEMON_STATS } from 'enums';
 
@@ -7,7 +7,7 @@ interface IProps {
   value: number;
   color: string;
 }
-const StatBar = ({ statName, value, color }: IProps) => {
+const StatBarWidget = ({ statName, value, color }: IProps) => {
   const width = `${value / 1.5}%`;
   return (
     <div className={classes.mainContainer}>
@@ -20,4 +20,4 @@ const StatBar = ({ statName, value, color }: IProps) => {
   );
 };
 
-export default StatBar;
+export default StatBarWidget;

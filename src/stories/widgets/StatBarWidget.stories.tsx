@@ -1,12 +1,12 @@
 import { ComponentStory } from '@storybook/react';
 
-import StatBar from 'components/StatBar/StatBar';
+import StatBarWidget from 'components/StatBarWidget/StatBarWidget';
 
 import { POKEMON_STATS } from 'enums';
 
 export default {
-  title: 'Components/StatBar',
-  component: StatBar,
+  title: 'Components/Widgets/StatBarWidget',
+  component: StatBarWidget,
   argTypes: {
     stat: {
       control: 'select',
@@ -22,7 +22,7 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof StatBar> = (args) => <StatBar {...args} />;
+const Template: ComponentStory<typeof StatBarWidget> = (args) => <StatBarWidget {...args} />;
 
 export const Default = Template.bind({});
 

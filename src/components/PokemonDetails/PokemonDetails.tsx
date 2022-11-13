@@ -1,6 +1,6 @@
 import classes from './PokemonDetails.module.scss';
 
-import TypeDisplay from 'components/TypeDisplay/TypeDisplay';
+import TypeWidget from 'components/TypeWidget/TypeWidget';
 import PokemonImage from 'components/PokemonImage/PokemonImage';
 
 import { IPokemon } from 'interfaces';
@@ -13,8 +13,8 @@ const PokemonCard = ({ pokemon }: IProps) => {
   const renderTypes = () => {
     return (
       <div className={classes.typesContainer}>
-        <TypeDisplay type={pokemon.types[0]} />
-        {pokemon.types[1] && <TypeDisplay type={pokemon.types[1]} />}
+        <TypeWidget type={pokemon.types[0]} />
+        {pokemon.types[1] && <TypeWidget type={pokemon.types[1]} />}
       </div>
     );
   };

@@ -4,7 +4,7 @@ import { useArgs } from '@storybook/client-api';
 import Modal from 'components/Modal/Modal';
 
 export default {
-  title: 'Components/Modal',
+  title: 'Components/Generic/Modal',
   component: Modal,
   argTypes: {
     children: {
