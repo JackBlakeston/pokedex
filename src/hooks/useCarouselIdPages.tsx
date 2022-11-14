@@ -3,6 +3,9 @@ import { useState, useTransition } from 'react';
 const FIRST_POKEMON_ID = 1;
 const LAST_POKEMON_ID = 905;
 const PAGE_SIZE = 10;
+const FIRST_PAGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const SEMI_FINAL_PAGE = [891, 892, 893, 894, 895, 896, 897, 898, 899, 900];
+const FINAL_PAGE = [901, 902, 903, 904, 905];
 
 interface IPages {
   current: number[];
@@ -10,13 +13,15 @@ interface IPages {
   prev: number[];
 }
 
-const usePokemonIdPages = () => {
+const useCarouselIdPages = () => {
   const { initialCurrentPage, initialNextPage } = getInitialPages();
   const [pages, setPages] = useState<IPages>({
     current: initialCurrentPage,
     next: initialNextPage,
-    prev: [],
+    prev: FINAL_PAGE,
   });
+
+  console.log('pages', pages);
   const [, startTransition] = useTransition();
 
   const goToNextPage = () => {
@@ -31,53 +36,58 @@ const usePokemonIdPages = () => {
     }
   };
 
-  const goToPreviousPage = () => {
+  const goToPrevPage = () => {
     if (pages.prev?.length > 0) {
       startTransition(() => {
         setPages({
           current: pages.prev,
           next: pages.current,
-          prev: getNewPreviousPage(pages.prev),
+          prev: getNewPrevPage(pages.prev),
         });
       });
     }
   };
 
-  return { ...pages, goToNextPage, goToPreviousPage };
+  return { ...pages, goToNextPage, goToPrevPage };
 };
 
 const getInitialPages = () => {
   const initialCurrentPage = Array(PAGE_SIZE);
   const initialNextPage = Array(PAGE_SIZE);
+  const initialPrevPage = Array(PAGE_SIZE);
 
   for (let i = 1; i <= PAGE_SIZE; i++) {
-    const arrayIndex = i - 1;
+    const arrayIndex = i - FIRST_POKEMON_ID;
+    const currentPagePokemonId = i;
     const nextPagePokemonId = i + PAGE_SIZE;
-    initialCurrentPage[arrayIndex] = i;
+
+    initialCurrentPage[arrayIndex] = currentPagePokemonId;
     initialNextPage[arrayIndex] = nextPagePokemonId;
   }
-
-  return { initialCurrentPage, initialNextPage };
+  return { initialCurrentPage, initialNextPage, initialPrevPage };
 };
 
-const getNewPreviousPage = (oldPreviousPage: number[]) => {
+const getNewPrevPage = (oldPreviousPage: number[]) => {
   if (oldPreviousPage[0] === FIRST_POKEMON_ID) {
-    return [];
+    return FINAL_PAGE;
   }
-  const newPreviousPage = oldPreviousPage.map((id) => id + PAGE_SIZE);
+  if (oldPreviousPage[4] === LAST_POKEMON_ID) {
+    return SEMI_FINAL_PAGE;
+  }
+  const newPreviousPage = oldPreviousPage.map((id) => id - PAGE_SIZE);
   return newPreviousPage;
 };
 
 const getNewNextPage = (oldNextPage: number[]) => {
   if (oldNextPage[4] === LAST_POKEMON_ID) {
-    return [];
+    return FIRST_PAGE;
   }
   const newNextPage = oldNextPage.map((id) => id + PAGE_SIZE);
 
   if (newNextPage[4] === LAST_POKEMON_ID) {
-    return newNextPage.slice(0, 5);
+    return FINAL_PAGE;
   }
   return newNextPage;
 };
 
-export default usePokemonIdPages;
+export default useCarouselIdPages;
