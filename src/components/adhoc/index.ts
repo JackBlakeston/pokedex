@@ -7,6 +7,7 @@ import StatBarWidget from './StatBarWidget/StatBarWidget';
 import StatsDisplay from './StatsDisplay/StatsDisplay';
 import TypesDisplay from './TypesDisplay/TypesDisplay';
 import TypeWidget from './TypeWidget/TypeWidget';
+import GridCarousel from './GridCarousel/GridCarousel';
 
 export {
   InfoDisplay,
@@ -18,4 +19,5 @@ export {
   StatsDisplay,
   TypesDisplay,
   TypeWidget,
+  GridCarousel,
 };

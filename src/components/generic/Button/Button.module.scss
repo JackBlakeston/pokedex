@@ -11,7 +11,7 @@
   border-radius: $borderRadiusMedium;
   cursor: pointer;
   user-select: none;
-  transition: 0.15s all ease;
+  transition: 0.15s all ease, opacity 0.4s;
   padding: 0 10px;
   width: fit-content;
 

@@ -1,64 +1,7 @@
 @import '/src/styles/variables';
 
-$slideAnimationTime: 1s;
-
 .mainContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  justify-content: center;
+  box-sizing: border-box;
+  min-height: 100vh;
   padding: 100px 0 0;
-
-  .gridContainer {
-    padding: 20px 0;
-    display: flex;
-    position: relative;
-    background-color: red;
-    background-color: $background2;
-    width: 100vw;
-  }
-
-  .nextPage,
-  .previousPage,
-  .currentPage {
-    width: 100vw;
-    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in-out opacity;
-  }
-
-  .currentPage {
-    z-index: 5;
-  }
-
-  .nextPage {
-    position: absolute;
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  .previousPage {
-    position: absolute;
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  .hidden {
-    // display: none;
-    // z-index: -10;
-    visibility: hidden;
-  }
-
-  .noDisplay {
-    display: none;
-  }
-
-  .button {
-    position: relative;
-    z-index: 11;
-  }
-
-  .disabledButton {
-    pointer-events: none;
-    cursor: initial;
-    opacity: 0.6s;
-  }
 }

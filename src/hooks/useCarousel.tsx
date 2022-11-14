@@ -17,7 +17,7 @@ interface IPageIdLists {
   pageC: number[];
 }
 
-const SLIDE_ANIMATION_TIME = 1000;
+const SLIDE_ANIMATION_TIME = 700;
 
 const useCarousel = (classes: IClasses) => {
   const { current, next, prev, goToNextPage, goToPrevPage } = useCarouselIdPages();
