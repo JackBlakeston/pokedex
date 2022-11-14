@@ -1,6 +1,6 @@
 @import '/src/styles/variables';
 
-$slideAnimationTime: 2s;
+$slideAnimationTime: 1s;
 
 .mainContainer {
   position: relative;
@@ -23,23 +23,31 @@ $slideAnimationTime: 2s;
   .previousPage,
   .currentPage {
     width: 100vw;
-    transition: $slideAnimationTime linear transform;
+    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in-out opacity;
   }
 
   .currentPage {
-    z-index: 10;
+    z-index: 5;
   }
 
   .nextPage {
     position: absolute;
     transform: translateX(100%);
+    opacity: 0;
   }
   .previousPage {
     position: absolute;
     transform: translateX(-100%);
+    opacity: 0;
   }
 
   .hidden {
+    // display: none;
+    // z-index: -10;
+    visibility: hidden;
+  }
+
+  .noDisplay {
     display: none;
   }
 

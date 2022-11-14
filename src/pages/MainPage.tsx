@@ -1,4 +1,4 @@
-import { memo, useEffect, useState, useTransition } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 
 import classes from './MainPage.module.scss';
 
@@ -7,48 +7,69 @@ import { Button } from 'components/generic';
 
 import usePokemonIdPages from 'hooks/usePokemonIdPages';
 
-const SLIDE_ANIMATION_TIME = 2000;
+const SLIDE_ANIMATION_TIME = 1000;
 
 const PokemonGridPageMemoized = memo(PokemonGridPage);
 
+interface IPageClassNames {
+  pageA: string;
+  pageB: string;
+  pageC: string;
+}
+
+interface IPageIdLists {
+  pageA: number[];
+  pageB: number[];
+  pageC: number[];
+}
+
 const MainPage = () => {
-  const { currentPage, nextPage, previousPage, goToNextPage, goToPreviousPage } = usePokemonIdPages();
+  const {
+    current: currentPage,
+    next: nextPage,
+    prev: previousPage,
+    goToNextPage,
+    goToPreviousPage,
+  } = usePokemonIdPages();
 
-  const [, startTransition] = useTransition();
+  const [pageClassNames, setPageClassNames] = useState<IPageClassNames>({
+    pageA: classes.currentPage,
+    pageB: `${classes.nextPage}`,
+    pageC: classes.previousPage,
+  });
 
-  const [pageAClassNames, setPageAClassNames] = useState(classes.currentPage);
-  const [pageBClassNames, setPageBClassNames] = useState(`${classes.nextPage}`);
-  const [pageCClassNames, setPageCClassNames] = useState(classes.previousPage);
-  const [pageAIdList, setPageAIdList] = useState(currentPage);
-  const [pageBIdList, setPageBIdList] = useState(nextPage);
-  const [pageCIdList, setPageCIdList] = useState(previousPage);
+  const [pageIdLists, setPageIdLists] = useState<IPageIdLists>({
+    pageA: currentPage,
+    pageB: nextPage,
+    pageC: previousPage,
+  });
 
   useEffect(() => {
     const currentPageId = document.getElementsByClassName(classes.currentPage)[0].id;
     if (currentPageId === 'pageA') {
-      startTransition(() => {
-        setPageAIdList(currentPage);
-        setPageBIdList(nextPage);
-        setPageCIdList(previousPage);
+      setPageIdLists({
+        pageA: currentPage,
+        pageB: nextPage,
+        pageC: previousPage,
       });
     }
     if (currentPageId === 'pageB') {
-      startTransition(() => {
-        setPageAIdList(previousPage);
-        setPageBIdList(currentPage);
-        setPageCIdList(nextPage);
+      setPageIdLists({
+        pageA: previousPage,
+        pageB: currentPage,
+        pageC: nextPage,
       });
     }
     if (currentPageId === 'pageC') {
-      startTransition(() => {
-        setPageAIdList(nextPage);
-        setPageBIdList(previousPage);
-        setPageCIdList(currentPage);
+      setPageIdLists({
+        pageA: nextPage,
+        pageB: previousPage,
+        pageC: currentPage,
       });
     }
   }, [currentPage, nextPage, previousPage]);
 
-  const disableButtonsDuringAnimation = () => {
+  const disableButtonsDuringAnimation = useCallback(() => {
     const buttons = document.getElementsByClassName(classes.button);
     Array.from(buttons).forEach((buttonElement) => {
       buttonElement.classList.add(classes.disabledButton);
@@ -58,13 +79,13 @@ const MainPage = () => {
         buttonElement.classList.remove(classes.disabledButton);
       });
     }, SLIDE_ANIMATION_TIME);
-  };
+  }, []);
 
-  const removeHiddenClass = (className: string) => {
+  const removeHiddenClass = useCallback((className: string) => {
     return className.split(' ')[0];
-  };
+  }, []);
 
-  const addHiddenClassWhereNecessary = (className: string, direction: 'previous' | 'next') => {
+  const addHiddenClassWhereNecessary = useCallback((className: string, direction: 'previous' | 'next') => {
     if (direction === 'next' && className === classes.nextPage) {
       return `${className} ${classes.hidden}`;
     }
@@ -72,29 +93,30 @@ const MainPage = () => {
       return `${className} ${classes.hidden}`;
     }
     return className;
-  };
+  }, []);
 
   const handleNextPageButtonClick = () => {
-    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageAClassNames), 'next');
-    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageBClassNames), 'next');
-    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageCClassNames), 'next');
-    setPageAClassNames(pageCClassNamesAux);
-    setPageBClassNames(pageAClassNamesAux);
-    setPageCClassNames(pageBClassNamesAux);
+    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageA), 'next');
+    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageB), 'next');
+    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageC), 'next');
+    setPageClassNames({
+      pageA: pageCClassNamesAux,
+      pageB: pageAClassNamesAux,
+      pageC: pageBClassNamesAux,
+    });
     disableButtonsDuringAnimation();
-    setTimeout(() => {
-      document.getElementsByClassName(classes.nextPage)[0].classList.remove(classes.hidden);
-    }, SLIDE_ANIMATION_TIME);
     goToNextPage();
   };
 
   const handlePreviousPageButtonClick = () => {
-    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageAClassNames), 'previous');
-    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageBClassNames), 'previous');
-    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageCClassNames), 'previous');
-    setPageAClassNames(pageBClassNamesAux);
-    setPageBClassNames(pageCClassNamesAux);
-    setPageCClassNames(pageAClassNamesAux);
+    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageA), 'previous');
+    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageB), 'previous');
+    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageC), 'previous');
+    setPageClassNames({
+      pageA: pageBClassNamesAux,
+      pageB: pageCClassNamesAux,
+      pageC: pageAClassNamesAux,
+    });
     disableButtonsDuringAnimation();
     goToPreviousPage();
   };
@@ -102,9 +124,9 @@ const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
-        <PokemonGridPageMemoized idList={pageAIdList} classNames={pageAClassNames} id='pageA' />
-        <PokemonGridPageMemoized idList={pageBIdList} classNames={pageBClassNames} id='pageB' />
-        <PokemonGridPageMemoized idList={pageCIdList} classNames={pageCClassNames} id='pageC' />
+        <PokemonGridPageMemoized idList={pageIdLists.pageA} classNames={pageClassNames.pageA} containerId='pageA' />
+        <PokemonGridPageMemoized idList={pageIdLists.pageB} classNames={pageClassNames.pageB} containerId='pageB' />
+        <PokemonGridPageMemoized idList={pageIdLists.pageC} classNames={pageClassNames.pageC} containerId='pageC' />
       </div>
       <Button
         onClick={handlePreviousPageButtonClick}

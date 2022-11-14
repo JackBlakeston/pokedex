@@ -4,34 +4,46 @@ const FIRST_POKEMON_ID = 1;
 const LAST_POKEMON_ID = 905;
 const PAGE_SIZE = 10;
 
+interface IPages {
+  current: number[];
+  next: number[];
+  prev: number[];
+}
+
 const usePokemonIdPages = () => {
   const { initialCurrentPage, initialNextPage } = getInitialPages();
-  const [currentPage, setCurrentPage] = useState<number[]>(initialCurrentPage);
-  const [nextPage, setNextPage] = useState<number[]>(initialNextPage);
-  const [previousPage, setPreviousPage] = useState<number[]>([]);
+  const [pages, setPages] = useState<IPages>({
+    current: initialCurrentPage,
+    next: initialNextPage,
+    prev: [],
+  });
   const [, startTransition] = useTransition();
 
   const goToNextPage = () => {
-    if (nextPage?.length > 0) {
+    if (pages.next?.length > 0) {
       startTransition(() => {
-        setPreviousPage(currentPage);
-        setCurrentPage(nextPage);
-        setNextPage(getNewNextPage(nextPage));
+        setPages({
+          current: pages.next,
+          next: getNewNextPage(pages.next),
+          prev: pages.current,
+        });
       });
     }
   };
 
   const goToPreviousPage = () => {
-    if (previousPage?.length > 0) {
+    if (pages.prev?.length > 0) {
       startTransition(() => {
-        setNextPage(currentPage);
-        setCurrentPage(previousPage);
-        setPreviousPage(getNewPreviousPage(previousPage));
+        setPages({
+          current: pages.prev,
+          next: pages.current,
+          prev: getNewPreviousPage(pages.prev),
+        });
       });
     }
   };
 
-  return { currentPage, nextPage, previousPage, goToNextPage, goToPreviousPage };
+  return { ...pages, goToNextPage, goToPreviousPage };
 };
 
 const getInitialPages = () => {
