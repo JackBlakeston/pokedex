@@ -1,5 +1,7 @@
 @import '/src/styles/variables';
 
+$slideAnimationTime: 2s;
+
 .mainContainer {
   position: relative;
   display: flex;
@@ -8,22 +10,20 @@
   justify-content: center;
   padding: 100px 0 0;
 
-  .gridBackground {
+  .gridContainer {
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    background-color: red;
     background-color: $background2;
-    height: 100%;
-    width: 100%;
+    width: 100vw;
   }
 
   .nextPage,
   .previousPage,
   .currentPage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    transition: 2s linear transform;
+    width: 100vw;
+    transition: $slideAnimationTime linear transform;
   }
 
   .currentPage {
@@ -31,10 +31,12 @@
   }
 
   .nextPage {
-    transform: translateX(103%);
+    position: absolute;
+    transform: translateX(100%);
   }
   .previousPage {
-    transform: translateX(-103%);
+    position: absolute;
+    transform: translateX(-100%);
   }
 
   .hidden {
@@ -45,5 +47,11 @@
   .button {
     position: relative;
     z-index: 11;
+  }
+
+  .disabledButton {
+    pointer-events: none;
+    cursor: initial;
+    opacity: 0.6s;
   }
 }

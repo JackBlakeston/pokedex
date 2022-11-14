@@ -6,6 +6,8 @@ import usePokemonIdPages from 'hooks/usePokemonIdPages';
 import { useEffect, useState } from 'react';
 import { Button } from 'components/generic';
 
+const SLIDE_ANIMATION_TIME = 2000;
+
 const MainPage = () => {
   const { currentPage, nextPage, previousPage, goToNextPage, goToPreviousPage } = usePokemonIdPages();
 
@@ -18,7 +20,6 @@ const MainPage = () => {
 
   useEffect(() => {
     const currentPageId = document.getElementsByClassName(classes.currentPage)[0].id;
-    console.log('useeff', currentPageId);
     if (currentPageId === 'pageA') {
       setPageAIdList(currentPage);
       setPageBIdList(nextPage);
@@ -36,6 +37,18 @@ const MainPage = () => {
     }
   }, [currentPage, nextPage, previousPage]);
 
+  const disableButtonsDuringAnimation = () => {
+    const buttons = document.getElementsByClassName(classes.button);
+    Array.from(buttons).forEach((buttonElement) => {
+      buttonElement.classList.add(classes.disabledButton);
+    });
+    setTimeout(() => {
+      Array.from(buttons).forEach((buttonElement) => {
+        buttonElement.classList.remove(classes.disabledButton);
+      });
+    }, SLIDE_ANIMATION_TIME);
+  };
+
   const handleNextPageButtonClick = () => {
     const currentPageId = document.getElementsByClassName(classes.currentPage)[0].id;
 
@@ -45,7 +58,6 @@ const MainPage = () => {
       setPageCClassNames(`${classes.nextPage} ${classes.hidden}`);
     }
     if (currentPageId === 'pageB') {
-      console.log('handler', currentPageId);
       setPageAClassNames(`${classes.nextPage} ${classes.hidden}`);
       setPageBClassNames(classes.previousPage);
       setPageCClassNames(classes.currentPage);
@@ -55,6 +67,7 @@ const MainPage = () => {
       setPageBClassNames(`${classes.nextPage} ${classes.hidden}`);
       setPageCClassNames(classes.previousPage);
     }
+    disableButtonsDuringAnimation();
     goToNextPage();
   };
 
@@ -67,7 +80,6 @@ const MainPage = () => {
       setPageCClassNames(classes.currentPage);
     }
     if (currentPageId === 'pageB') {
-      console.log('handler', currentPageId);
       setPageAClassNames(classes.currentPage);
       setPageBClassNames(classes.nextPage);
       setPageCClassNames(`${classes.previousPage} ${classes.hidden}`);
@@ -77,15 +89,17 @@ const MainPage = () => {
       setPageBClassNames(classes.currentPage);
       setPageCClassNames(classes.nextPage);
     }
+    disableButtonsDuringAnimation();
     goToPreviousPage();
   };
 
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.gridBackground} />
-      <PokemonGridPage idList={pageAIdList} classNames={pageAClassNames} id='pageA' />
-      <PokemonGridPage idList={pageBIdList} classNames={pageBClassNames} id='pageB' />
-      <PokemonGridPage idList={pageCIdList} classNames={pageCClassNames} id='pageC' />
+      <div className={classes.gridContainer}>
+        <PokemonGridPage idList={pageAIdList} classNames={pageAClassNames} id='pageA' />
+        <PokemonGridPage idList={pageBIdList} classNames={pageBClassNames} id='pageB' />
+        <PokemonGridPage idList={pageCIdList} classNames={pageCClassNames} id='pageC' />
+      </div>
       <Button
         onClick={handlePreviousPageButtonClick}
         text='Previous'
