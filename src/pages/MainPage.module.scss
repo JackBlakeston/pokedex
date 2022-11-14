@@ -40,8 +40,7 @@ $slideAnimationTime: 2s;
   }
 
   .hidden {
-    visibility: none;
-    z-index: -10;
+    display: none;
   }
 
   .button {

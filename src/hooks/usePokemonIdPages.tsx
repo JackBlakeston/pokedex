@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useTransition } from 'react';
 
 const FIRST_POKEMON_ID = 1;
 const LAST_POKEMON_ID = 905;
@@ -9,20 +9,25 @@ const usePokemonIdPages = () => {
   const [currentPage, setCurrentPage] = useState<number[]>(initialCurrentPage);
   const [nextPage, setNextPage] = useState<number[]>(initialNextPage);
   const [previousPage, setPreviousPage] = useState<number[]>([]);
+  const [, startTransition] = useTransition();
 
   const goToNextPage = () => {
     if (nextPage?.length > 0) {
-      setPreviousPage(currentPage);
-      setCurrentPage(nextPage);
-      setNextPage(getNewNextPage(nextPage));
+      startTransition(() => {
+        setPreviousPage(currentPage);
+        setCurrentPage(nextPage);
+        setNextPage(getNewNextPage(nextPage));
+      });
     }
   };
 
   const goToPreviousPage = () => {
     if (previousPage?.length > 0) {
-      setNextPage(currentPage);
-      setCurrentPage(previousPage);
-      setPreviousPage(getNewPreviousPage(previousPage));
+      startTransition(() => {
+        setNextPage(currentPage);
+        setCurrentPage(previousPage);
+        setPreviousPage(getNewPreviousPage(previousPage));
+      });
     }
   };
 

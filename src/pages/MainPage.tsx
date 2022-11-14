@@ -1,18 +1,23 @@
+import { memo, useEffect, useState, useTransition } from 'react';
+
 import classes from './MainPage.module.scss';
 
 import { PokemonGridPage } from 'components/adhoc';
-
-import usePokemonIdPages from 'hooks/usePokemonIdPages';
-import { useEffect, useState } from 'react';
 import { Button } from 'components/generic';
 
+import usePokemonIdPages from 'hooks/usePokemonIdPages';
+
 const SLIDE_ANIMATION_TIME = 2000;
+
+const PokemonGridPageMemoized = memo(PokemonGridPage);
 
 const MainPage = () => {
   const { currentPage, nextPage, previousPage, goToNextPage, goToPreviousPage } = usePokemonIdPages();
 
+  const [, startTransition] = useTransition();
+
   const [pageAClassNames, setPageAClassNames] = useState(classes.currentPage);
-  const [pageBClassNames, setPageBClassNames] = useState(`${classes.nextPage} ${classes.hidden}`);
+  const [pageBClassNames, setPageBClassNames] = useState(`${classes.nextPage}`);
   const [pageCClassNames, setPageCClassNames] = useState(classes.previousPage);
   const [pageAIdList, setPageAIdList] = useState(currentPage);
   const [pageBIdList, setPageBIdList] = useState(nextPage);
@@ -21,19 +26,25 @@ const MainPage = () => {
   useEffect(() => {
     const currentPageId = document.getElementsByClassName(classes.currentPage)[0].id;
     if (currentPageId === 'pageA') {
-      setPageAIdList(currentPage);
-      setPageBIdList(nextPage);
-      setPageCIdList(previousPage);
+      startTransition(() => {
+        setPageAIdList(currentPage);
+        setPageBIdList(nextPage);
+        setPageCIdList(previousPage);
+      });
     }
     if (currentPageId === 'pageB') {
-      setPageAIdList(previousPage);
-      setPageBIdList(currentPage);
-      setPageCIdList(nextPage);
+      startTransition(() => {
+        setPageAIdList(previousPage);
+        setPageBIdList(currentPage);
+        setPageCIdList(nextPage);
+      });
     }
     if (currentPageId === 'pageC') {
-      setPageAIdList(nextPage);
-      setPageBIdList(previousPage);
-      setPageCIdList(currentPage);
+      startTransition(() => {
+        setPageAIdList(nextPage);
+        setPageBIdList(previousPage);
+        setPageCIdList(currentPage);
+      });
     }
   }, [currentPage, nextPage, previousPage]);
 
@@ -71,6 +82,9 @@ const MainPage = () => {
     setPageBClassNames(pageAClassNamesAux);
     setPageCClassNames(pageBClassNamesAux);
     disableButtonsDuringAnimation();
+    setTimeout(() => {
+      document.getElementsByClassName(classes.nextPage)[0].classList.remove(classes.hidden);
+    }, SLIDE_ANIMATION_TIME);
     goToNextPage();
   };
 
@@ -88,9 +102,9 @@ const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
-        <PokemonGridPage idList={pageAIdList} classNames={pageAClassNames} id='pageA' />
-        <PokemonGridPage idList={pageBIdList} classNames={pageBClassNames} id='pageB' />
-        <PokemonGridPage idList={pageCIdList} classNames={pageCClassNames} id='pageC' />
+        <PokemonGridPageMemoized idList={pageAIdList} classNames={pageAClassNames} id='pageA' />
+        <PokemonGridPageMemoized idList={pageBIdList} classNames={pageBClassNames} id='pageB' />
+        <PokemonGridPageMemoized idList={pageCIdList} classNames={pageCClassNames} id='pageC' />
       </div>
       <Button
         onClick={handlePreviousPageButtonClick}

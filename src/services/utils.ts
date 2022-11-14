@@ -29,7 +29,7 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
   const imgUrl = `${IMAGES_URL}${idPadded}.png`;
   const fac = new FastAverageColor();
   const { hex } = await fac.getColorAsync(imgUrl);
-
+  // const hex = 'aquamarine';
   const pokemon = {
     id: idPadded,
     name,
