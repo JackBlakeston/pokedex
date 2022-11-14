@@ -7,14 +7,15 @@ interface IProps {
   text: string;
   color: string;
   size: 'small' | 'medium' | 'large';
+  className: string;
 }
 
-const Button = ({ onClick, text, color, size }: IProps) => {
+const Button = ({ onClick, text, color, size, className }: IProps) => {
   const buttonStyles = {
     '--buttonColor': color,
   } as CSSProperties;
 
-  const buttonClasses = `${classes.mainContainer} ${classes[size]}`;
+  const buttonClasses = `${classes.mainContainer} ${classes[size]} ${className}`;
 
   return (
     <div onClick={onClick} className={buttonClasses} style={buttonStyles}>

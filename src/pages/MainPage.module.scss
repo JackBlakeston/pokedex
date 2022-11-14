@@ -1,0 +1,49 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  padding: 100px 0 0;
+
+  .gridBackground {
+    background-color: $background2;
+    height: 100%;
+    width: 100%;
+  }
+
+  .nextPage,
+  .previousPage,
+  .currentPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 2s linear transform;
+  }
+
+  .currentPage {
+    z-index: 10;
+  }
+
+  .nextPage {
+    transform: translateX(103%);
+  }
+  .previousPage {
+    transform: translateX(-103%);
+  }
+
+  .hidden {
+    visibility: none;
+    z-index: -10;
+  }
+
+  .button {
+    position: relative;
+    z-index: 11;
+  }
+}

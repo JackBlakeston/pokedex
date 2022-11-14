@@ -8,6 +8,7 @@ const page3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 const page4 = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40];
 const page5 = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
 const page6 = [51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
+const page7 = [901, 902, 903, 904, 905];
 
 export default {
   title: 'Components/PokemonGridPage',
@@ -15,7 +16,7 @@ export default {
   argTypes: {
     idList: {
       control: 'select',
-      options: [page1, page2, page3, page4, page5, page6],
+      options: [page1, page2, page3, page4, page5, page6, page7],
     },
   },
 };
@@ -24,8 +25,8 @@ const Template: ComponentStory<typeof PokemonGridPage> = (args) => (
   <PokemonGridPage {...args} key={JSON.stringify(args)} />
 );
 
-export const Card = Template.bind({});
+export const Grid = Template.bind({});
 
-Card.args = {
+Grid.args = {
   idList: page1,
 };

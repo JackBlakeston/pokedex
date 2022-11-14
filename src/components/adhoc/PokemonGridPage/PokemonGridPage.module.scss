@@ -1,9 +1,12 @@
+@import '/src/styles/variables';
+
 .mainContainer {
-  display: grid;
-  align-self: center;
-  max-width: 2200px;
-  grid-gap: 10%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: minmax(min-content, max-content);
+  max-width: 3200px;
+  width: 96vw;
+  row-gap: 9vh;
+  place-items: center;
+  background-color: $background2;
 }

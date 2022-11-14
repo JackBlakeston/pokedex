@@ -9,7 +9,7 @@ export default {
     pokemonId: {
       control: {
         type: 'range',
-        min: 0,
+        min: 1,
         max: 905,
         step: 1,
       },
