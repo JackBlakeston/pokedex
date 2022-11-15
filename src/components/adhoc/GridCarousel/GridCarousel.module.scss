@@ -1,0 +1,57 @@
+@import '/src/styles/variables';
+
+$slideAnimationTime: 1s;
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+
+  .gridContainer {
+    position: relative;
+    display: flex;
+    padding: 20px 0;
+  }
+
+  .nextPage,
+  .previousPage,
+  .currentPage {
+    width: 100vw;
+    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in-out opacity;
+  }
+
+  .currentPage {
+    z-index: 2;
+  }
+
+  .nextPage {
+    position: absolute;
+    transform: translateX(100%);
+  }
+
+  .previousPage {
+    position: absolute;
+    transform: translateX(-100%);
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .disabledButton {
+      pointer-events: none;
+      opacity: 0.6;
+      cursor: initial;
+      opacity: 0.6s;
+    }
+  }
+}

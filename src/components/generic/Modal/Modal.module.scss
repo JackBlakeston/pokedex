@@ -1,0 +1,31 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.202);
+  z-index: 3;
+
+  .modalBox {
+    position: relative;
+    background-color: $background1;
+    border-radius: $borderRadiusMedium;
+    box-shadow: $shadowMedium;
+
+    .closeButton {
+      position: absolute;
+      opacity: 0.7;
+      width: 30px;
+      top: -17px;
+      right: 0px;
+      cursor: pointer;
+      z-index: 3;
+    }
+  }
+}

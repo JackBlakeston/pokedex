@@ -1,0 +1,13 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 30px;
+  width: 110px;
+  border-radius: $borderRadiusMedium;
+  box-shadow: $shadowSmall;
+  opacity: 0.8;
+}

@@ -1,0 +1,40 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--buttonColor);
+  color: #ffffff;
+  box-shadow: $shadowMedium;
+  border: 1px solid var(--buttonColor);
+  border-radius: $borderRadiusMedium;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.15s all ease, opacity 0.4s;
+  padding: 0 10px;
+  width: fit-content;
+
+  &:hover,
+  &:active {
+    background-color: initial;
+    color: var(--buttonColor);
+  }
+
+  &:active {
+    transform: translateY(5%);
+  }
+
+  &.small {
+    min-width: 70px;
+    height: 35px;
+  }
+  &.medium {
+    min-width: 110px;
+    height: 45px;
+  }
+  &.large {
+    min-width: 140px;
+    height: 50px;
+  }
+}
