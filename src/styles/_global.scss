@@ -1,7 +1,14 @@
+@font-face {
+  font-family: Pokemon;
+  src: url(../assets/fonts/Pokemon.ttf);
+}
+@font-face {
+  font-family: PokemonHollow;
+  src: url(../assets/fonts/PokemonHollow.ttf);
+}
+
 body {
   margin: 0;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-  //   'Droid Sans', 'Helvetica Neue', sans-serif;
   font-family: 'Flexo-Demi', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
