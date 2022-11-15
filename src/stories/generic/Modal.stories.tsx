@@ -27,5 +27,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   isOpen: true,
-  children: <div>THIS IS A MODAL WITH SOME TEXT INSIDE</div>,
+  children: <div style={{ padding: '60px' }}>THIS IS A MODAL WITH SOME TEXT INSIDE</div>,
 };
