@@ -5,17 +5,26 @@ import { TypesDisplay } from 'components/adhoc';
 
 import usePokemon from 'hooks/usePokemon';
 
+import { IPokemon } from 'interfaces';
+
 interface IProps {
   pokemonId: number;
+  onClick: (pokemon: IPokemon) => void;
 }
 
-const PokemonCard = ({ pokemonId }: IProps) => {
+const PokemonCard = ({ pokemonId, onClick }: IProps) => {
   const pokemon = usePokemon(pokemonId);
+
+  const handleClick = () => {
+    if (pokemon) {
+      onClick(pokemon);
+    }
+  };
 
   const renderPokemonCard = () => {
     if (pokemon) {
       return (
-        <div className={classes.mainContainer}>
+        <div className={classes.mainContainer} onClick={handleClick}>
           <PokemonImage pokemon={pokemon} size='small' />
           <div className={classes.displaysContainer}>
             <div>#{pokemon.id}</div>
