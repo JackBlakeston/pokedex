@@ -20,11 +20,18 @@ $slideAnimationTime: 1s;
   .previousPage,
   .currentPage {
     width: 100vw;
-    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in-out opacity;
+    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in opacity;
   }
 
   .currentPage {
     z-index: 2;
+  }
+
+  .nextPage,
+  .previousPage {
+    &:not(.hidden) {
+      opacity: 0;
+    }
   }
 
   .nextPage {

@@ -21,7 +21,6 @@ const useCarouselIdPages = () => {
     prev: FINAL_PAGE,
   });
 
-  console.log('pages', pages);
   const [, startTransition] = useTransition();
 
   const goToNextPage = () => {
