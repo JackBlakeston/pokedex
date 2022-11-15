@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FastAverageColor } from 'fast-average-color';
+import { POKEMON_COLORS } from 'constants/pokemonColours';
 
 import { IAbilityRes, IStatRes, ITypeRes } from 'interfaces';
 
@@ -27,9 +27,8 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
 
   const idPadded = id.toString().padStart(3, '0');
   const imgUrl = `${IMAGES_URL}${idPadded}.png`;
-  const fac = new FastAverageColor();
-  const { hex } = await fac.getColorAsync(imgUrl);
-  // const hex = 'aquamarine';
+  const color = POKEMON_COLORS[id as keyof typeof POKEMON_COLORS];
+
   const pokemon = {
     id: idPadded,
     name,
@@ -39,7 +38,7 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     abilities,
     weight,
     height,
-    color: hex,
+    color,
   };
 
   return pokemon;
