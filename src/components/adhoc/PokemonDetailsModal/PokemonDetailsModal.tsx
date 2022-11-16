@@ -14,7 +14,7 @@ interface IProps {
 const PokemonCard = ({ pokemon, isOpen, setIsOpen }: IProps) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-      <div className={classes.mainContainer}>
+      <div className={classes.mainContainer} data-testid='DetailsModal'>
         <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size='large' />
         <div className={classes.displaysContainer}>
           <div>#{pokemon.id}</div>
