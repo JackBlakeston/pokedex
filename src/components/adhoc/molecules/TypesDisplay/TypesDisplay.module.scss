@@ -1,6 +1,10 @@
 .mainContainer {
   display: flex;
-  justify-content: center;
-  width: 240px;
-  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+
+  div:only-child {
+    margin: 0 auto;
+  }
 }
