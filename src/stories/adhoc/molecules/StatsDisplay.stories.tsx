@@ -2,10 +2,16 @@ import { ComponentStory } from '@storybook/react';
 
 import { StatsDisplay } from 'components/adhoc';
 
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../assets/pokemonData';
+import {
+  bellsproutData,
+  blastoiseData,
+  bulbasaurData,
+  charizardData,
+  pikachuData,
+} from 'stories/assets/pokemonData';
 
 export default {
-  title: 'Components/Displays/StatsDisplay',
+  title: 'Components/Molecules/StatsDisplay',
   component: StatsDisplay,
 };
 
