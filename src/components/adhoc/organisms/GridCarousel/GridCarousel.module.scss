@@ -1,7 +1,7 @@
 @import '/src/styles/variables';
 
 $slideAnimationTime: 1s;
-$pageHeightOffset: 93.7%;
+$pageHeightOffset: 100%;
 
 .mainContainer {
   position: relative;
@@ -16,7 +16,6 @@ $pageHeightOffset: 93.7%;
     position: relative;
     display: flex;
     flex: 1;
-    padding: 20px 0;
   }
 
   .nextPage,
