@@ -1,15 +1,15 @@
 import { ComponentStory } from '@storybook/react';
 
-import { InfoDisplay } from 'components/adhoc';
+import { AttributesCard } from 'components/adhoc';
 
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../assets/pokemonData';
+import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from 'stories/assets/pokemonData';
 
 export default {
-  title: 'Components/Displays/InfoDisplay',
-  component: InfoDisplay,
+  title: 'Components/Atoms/AttributesCard',
+  component: AttributesCard,
 };
 
-const Template: ComponentStory<typeof InfoDisplay> = (args) => <InfoDisplay {...args} />;
+const Template: ComponentStory<typeof AttributesCard> = (args) => <AttributesCard {...args} />;
 
 export const Bulbasaur = Template.bind({});
 

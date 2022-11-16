@@ -1,23 +1,25 @@
-import InfoDisplay from './InfoDisplay/InfoDisplay';
+// Atoms
+import AttributesCard from './atoms/AttributesCard/AttributesCard';
+import StatBar from './atoms/StatBar/StatBar';
+import TypeBadge from './atoms/TypeBadge/TypeBadge';
+
 import PokemonCard from './PokemonCard/PokemonCard';
 import PokemonDetailsModal from './PokemonDetailsModal/PokemonDetailsModal';
 import PokemonGridPage from './PokemonGridPage/PokemonGridPage';
 import PokemonImage from './PokemonImage/PokemonImage';
-import StatBarWidget from './StatBarWidget/StatBarWidget';
 import StatsDisplay from './StatsDisplay/StatsDisplay';
 import TypesDisplay from './TypesDisplay/TypesDisplay';
-import TypeWidget from './TypeWidget/TypeWidget';
 import GridCarousel from './GridCarousel/GridCarousel';
 
 export {
-  InfoDisplay,
+  AttributesCard,
   PokemonCard,
   PokemonDetailsModal,
   PokemonGridPage,
   PokemonImage,
-  StatBarWidget,
+  StatBar,
   StatsDisplay,
   TypesDisplay,
-  TypeWidget,
+  TypeBadge,
   GridCarousel,
 };

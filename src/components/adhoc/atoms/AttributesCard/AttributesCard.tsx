@@ -1,11 +1,11 @@
 import { IPokemon } from 'interfaces';
-import classes from './InfoDisplay.module.scss';
+import classes from './AttributesCard.module.scss';
 
 interface IProps {
   pokemon: IPokemon;
 }
 
-const InfoDisplay = ({ pokemon }: IProps) => {
+const AttributesCard = ({ pokemon }: IProps) => {
   const heightMeters = pokemon.height / 10;
   const weightKilograms = pokemon.weight / 10;
 
@@ -27,4 +27,4 @@ const InfoDisplay = ({ pokemon }: IProps) => {
   );
 };
 
-export default InfoDisplay;
+export default AttributesCard;

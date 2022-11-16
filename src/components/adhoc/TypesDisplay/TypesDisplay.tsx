@@ -1,6 +1,6 @@
 import classes from './TypesDisplay.module.scss';
 
-import { TypeWidget } from 'components/adhoc';
+import { TypeBadge } from 'components/adhoc';
 
 import { POKEMON_TYPES } from 'enums';
 
@@ -11,8 +11,8 @@ interface IProps {
 const TypesDisplay = ({ types }: IProps) => {
   return (
     <div className={classes.mainContainer}>
-      <TypeWidget type={types[0]} />
-      {types[1] && <TypeWidget type={types[1]} />}
+      <TypeBadge type={types[0]} />
+      {types[1] && <TypeBadge type={types[1]} />}
     </div>
   );
 };

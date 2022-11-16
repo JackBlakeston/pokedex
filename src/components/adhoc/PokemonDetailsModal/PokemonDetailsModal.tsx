@@ -1,7 +1,7 @@
 import classes from './PokemonDetailsModal.module.scss';
 
 import { Modal } from 'components/generic';
-import { TypesDisplay, PokemonImage, InfoDisplay, StatsDisplay } from 'components/adhoc';
+import { TypesDisplay, PokemonImage, AttributesCard, StatsDisplay } from 'components/adhoc';
 
 import { IPokemon } from 'interfaces';
 
@@ -21,7 +21,7 @@ const PokemonCard = ({ pokemon, isOpen, setIsOpen }: IProps) => {
           <div className={classes.name}>{pokemon.name}</div>
           <div className={classes.displayColumnsContainer}>
             <div className={classes.displayColumnLeft}>
-              <InfoDisplay pokemon={pokemon} />
+              <AttributesCard pokemon={pokemon} />
               <TypesDisplay types={pokemon.types} />
             </div>
             <StatsDisplay pokemon={pokemon} />
