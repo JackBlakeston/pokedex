@@ -6,8 +6,9 @@ import { ReactComponent as PokeballBackground } from 'assets/icons/pokeball2.svg
 const MainPage = () => {
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.title}>
-        <span>pokemin</span> the minimalist pokedex
+      <div className={classes.titleContainer}>
+        <div>pokemin</div>
+        <div>the minimalist pokedex</div>
       </div>
       <GridCarousel />
       <PokeballBackground className={classes.pokeballBackground} />
