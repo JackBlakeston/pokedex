@@ -1,12 +1,18 @@
 import { ComponentStory } from '@storybook/react';
 
-import { PokemonImage } from 'components/adhoc';
+import { PokemonImage as StoryPokemonImage } from 'components/adhoc';
 import { POKEMON_COLORS } from 'constants/pokemonColours';
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../../assets/pokemonData';
+import {
+  bellsproutData,
+  blastoiseData,
+  bulbasaurData,
+  charizardData,
+  pikachuData,
+} from '../../assets/pokemonData';
 
 export default {
   title: 'Components/Atoms/PokemonImage',
-  component: PokemonImage,
+  component: StoryPokemonImage,
   argTypes: {
     color: {
       control: 'select',
@@ -15,7 +21,7 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof PokemonImage> = (args) => <PokemonImage {...args} />;
+const Template: ComponentStory<typeof StoryPokemonImage> = ({ ...args }) => <StoryPokemonImage {...args} />;
 
 export const Bulbasaur = Template.bind({});
 

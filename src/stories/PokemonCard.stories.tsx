@@ -17,7 +17,9 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof PokemonCard> = (args) => <PokemonCard {...args} key={JSON.stringify(args)} />;
+const Template: ComponentStory<typeof PokemonCard> = (args) => (
+  <PokemonCard {...args} key={JSON.stringify(args)} />
+);
 
 export const Card = Template.bind({});
 
