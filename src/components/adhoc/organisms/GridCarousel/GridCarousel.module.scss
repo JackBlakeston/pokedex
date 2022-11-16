@@ -23,7 +23,7 @@ $pageHeightOffset: 93.7%;
   .previousPage,
   .currentPage {
     width: 100vw;
-    transition: $slideAnimationTime linear transform, 0.7s ease-in opacity;
+    transition: $slideAnimationTime linear transform, 0.5s ease-in opacity;
   }
 
   .currentPage {
@@ -33,7 +33,7 @@ $pageHeightOffset: 93.7%;
   .nextPage,
   .previousPage {
     &:not(.hidden) {
-      opacity: 0;
+      opacity: 0.3;
     }
   }
 

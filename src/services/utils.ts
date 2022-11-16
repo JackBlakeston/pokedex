@@ -13,6 +13,8 @@ interface IResponseData {
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
   const { name, height, weight } = data;
 
+  const formattedName = (name as string).split('-')[0];
+
   const abilities = data?.abilities?.map((abilityRes: IAbilityRes) => {
     return abilityRes.ability.name;
   });
@@ -32,7 +34,7 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
 
   const pokemon = {
     id: idPadded,
-    name,
+    name: formattedName,
     imgUrl,
     stats,
     types,
