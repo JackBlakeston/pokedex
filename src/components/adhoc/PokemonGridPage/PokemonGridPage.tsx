@@ -37,7 +37,7 @@ const PokemonGridPage = ({ idList, classNames, containerId }: IProps) => {
   }, [selectedPokemon, isModalOpen]);
   return (
     <>
-      <div className={mainContainerClasses} id={containerId}>
+      <div className={mainContainerClasses} id={containerId} data-testid='Grid'>
         {renderGridItems()}
       </div>
       {renderModal()}

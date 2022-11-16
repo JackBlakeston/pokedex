@@ -20,7 +20,7 @@ $slideAnimationTime: 1s;
   .previousPage,
   .currentPage {
     width: 100vw;
-    transition: $slideAnimationTime linear transform, $slideAnimationTime ease-in opacity;
+    transition: $slideAnimationTime linear transform, 0.7s ease-in opacity;
   }
 
   .currentPage {

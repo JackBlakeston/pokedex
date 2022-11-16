@@ -25,7 +25,7 @@ const Modal = ({ children, isOpen, setIsOpen }: IProps) => {
   };
 
   return (
-    <div className={classes.mainContainer} onClick={handleModalOverlayClick}>
+    <div className={classes.mainContainer} onClick={handleModalOverlayClick} data-testid='ModalOverlay'>
       <div className={classes.modalBox} onClick={handleModalBoxClick}>
         <Close className={classes.closeButton} onClick={handleCloseButtonClick} />
         {children}

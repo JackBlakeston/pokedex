@@ -2,19 +2,18 @@ import classes from './PokemonImage.module.scss';
 
 import { ReactComponent as PokeballBackground } from 'assets/icons/pokeball.svg';
 
-import { IPokemon } from 'interfaces';
-
 interface IProps {
-  pokemon: IPokemon;
+  imgUrl: string;
+  color: string;
   size: 'small' | 'large';
 }
 
-const PokemonImage = ({ pokemon, size }: IProps) => {
+const PokemonImage = ({ imgUrl, color, size }: IProps) => {
   const coloredBackgroundStyle = {
-    backgroundColor: pokemon.color,
+    backgroundColor: color,
   };
   const pokeballBackgroundStyle = {
-    fill: pokemon.color,
+    fill: color,
   };
 
   const pokemonImgClasses = `${classes.pokemonImg} ${size === 'small' ? '' : classes.large}`;
@@ -23,7 +22,7 @@ const PokemonImage = ({ pokemon, size }: IProps) => {
 
   return (
     <div className={classes.mainContainer}>
-      <img src={pokemon.imgUrl} className={pokemonImgClasses} />
+      <img src={imgUrl} className={pokemonImgClasses} />
       <PokeballBackground style={pokeballBackgroundStyle} className={pokeballBackgroundClasses} />
       <div className={coloredBackgroundClasses} style={coloredBackgroundStyle} />
     </div>

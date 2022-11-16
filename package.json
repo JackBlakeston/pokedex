@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
+    "cypress": "cypress open",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -65,6 +66,7 @@
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cypress": "^11.1.0",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-storybook": "^0.6.7",

@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  color: 'blue',
+  color: '#F95587',
   text: 'Button',
   size: 'medium',
   onClick: () => console.log('Clicked'),

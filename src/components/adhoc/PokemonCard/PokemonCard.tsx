@@ -24,8 +24,8 @@ const PokemonCard = ({ pokemonId, onClick }: IProps) => {
   const renderPokemonCard = () => {
     if (pokemon) {
       return (
-        <div className={classes.mainContainer} onClick={handleClick}>
-          <PokemonImage pokemon={pokemon} size='small' />
+        <div className={classes.mainContainer} onClick={handleClick} data-testid='Card'>
+          <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size='small' />
           <div className={classes.displaysContainer}>
             <div>#{pokemon.id}</div>
             <div className={classes.name}>{pokemon.name}</div>
