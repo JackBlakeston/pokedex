@@ -57,10 +57,16 @@ describe('Cards', () => {
       });
   });
 
-  it('Open details modal on click', () => {
+  it('Open correct details modal on click', () => {
     cy.contains('bulbasaur').click();
     cy.contains('HP');
     cy.contains('Weight');
+    getTestElement('DetailsModal').contains('bulbasaur');
+    getTestElement('ModalOverlay').click('topLeft');
+    cy.contains('charmander').click();
+    cy.contains('HP');
+    cy.contains('Weight');
+    getTestElement('DetailsModal').contains('charmander');
   });
 });
 

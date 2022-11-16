@@ -4,7 +4,7 @@ import '../src/styles/styles.scss';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
-    // expanded: true,
+    expanded: true,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
@@ -12,3 +12,11 @@ export const parameters = {
     presetColors: Object.values(TYPE_COLORS),
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <div style={{ margin: '3rem' }}>
+      <Story />
+    </div>
+  ),
+];

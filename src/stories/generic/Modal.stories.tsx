@@ -1,11 +1,11 @@
 import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
 
-import { Modal } from 'components/generic/';
+import { Modal as StoryModal } from 'components/generic/';
 
 export default {
   title: 'Components/Generic/Modal',
-  component: Modal,
+  component: StoryModal,
   argTypes: {
     children: {
       control: false,
@@ -13,19 +13,19 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof Modal> = (args) => {
+const Template: ComponentStory<typeof StoryModal> = (args) => {
   const [, updateArgs] = useArgs();
 
   const setIsOpen = (isOpen: boolean) => {
     updateArgs({ ...args, isOpen: isOpen });
   };
 
-  return <Modal {...args} setIsOpen={setIsOpen} />;
+  return <StoryModal {...args} setIsOpen={setIsOpen} />;
 };
 
-export const Default = Template.bind({});
+export const Modal = Template.bind({});
 
-Default.args = {
+Modal.args = {
   isOpen: true,
   children: <div style={{ padding: '60px' }}>THIS IS A MODAL WITH SOME TEXT INSIDE</div>,
 };

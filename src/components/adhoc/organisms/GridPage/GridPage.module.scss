@@ -1,0 +1,9 @@
+@import '/src/styles/variables';
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100vw;
+  row-gap: 10%;
+  place-items: center;
+}
