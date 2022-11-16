@@ -3,9 +3,7 @@
 .mainContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(min-content, max-content);
   width: 100vw;
-  row-gap: 60px;
-  height: 560px;
+  row-gap: 10%;
   place-items: center;
 }

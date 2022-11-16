@@ -1,11 +1,13 @@
 @import '/src/styles/variables';
 
 $slideAnimationTime: 1s;
+$pageHeightOffset: 93.7%;
 
 .mainContainer {
   position: relative;
   display: flex;
   flex-direction: column;
+  flex: 1;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -13,6 +15,7 @@ $slideAnimationTime: 1s;
   .gridContainer {
     position: relative;
     display: flex;
+    flex: 1;
     padding: 20px 0;
   }
 
@@ -37,11 +40,13 @@ $slideAnimationTime: 1s;
   .nextPage {
     position: absolute;
     transform: translateX(100%);
+    height: $pageHeightOffset;
   }
 
   .previousPage {
     position: absolute;
     transform: translateX(-100%);
+    height: $pageHeightOffset;
   }
 
   .hidden {

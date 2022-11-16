@@ -6,6 +6,8 @@
   flex-direction: column;
   background-color: $background1;
   width: 90%;
+  height: 100%;
+  max-height: 400px;
   border-radius: $borderRadiusMedium;
   overflow: hidden;
   box-shadow: $shadowSmall;
