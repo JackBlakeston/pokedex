@@ -21,7 +21,11 @@ const PokemonCard = ({ pokemon, isOpen, setIsOpen }: IProps) => {
           <div className={classes.name}>{pokemon.name}</div>
           <div className={classes.displayColumnsContainer}>
             <div className={classes.displayColumnLeft}>
-              <AttributesCard pokemon={pokemon} />
+              <AttributesCard
+                weight={pokemon.weight}
+                height={pokemon.height}
+                ability={pokemon.abilities[0]}
+              />
               <TypesDisplay types={pokemon.types} />
             </div>
             <StatsDisplay pokemon={pokemon} />

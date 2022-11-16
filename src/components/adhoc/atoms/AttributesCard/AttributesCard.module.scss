@@ -12,14 +12,16 @@
   border-radius: $borderRadiusMedium;
   box-shadow: $shadowSmall;
 
-  .infoLine {
+  .attributeLine {
     display: flex;
     text-transform: capitalize;
-    .infoLabel {
+    .attributeLabel {
       font-weight: bold;
       min-width: 70px;
     }
-
+    .attributeValue {
+      min-width: 40px;
+    }
     &:first-child {
       text-transform: none;
     }

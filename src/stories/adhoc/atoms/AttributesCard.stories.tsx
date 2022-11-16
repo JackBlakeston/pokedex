@@ -1,42 +1,48 @@
 import { ComponentStory } from '@storybook/react';
+import { FC } from 'react';
 
-import { AttributesCard } from 'components/adhoc';
+import { AttributesCard as StoryAttributesCard } from 'components/adhoc';
 
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from 'stories/assets/pokemonData';
+import { bulbasaurData } from 'stories/assets/pokemonData';
 
 export default {
   title: 'Components/Atoms/AttributesCard',
-  component: AttributesCard,
+  component: StoryAttributesCard,
+  argTypes: {
+    height: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 100,
+        step: 0.1,
+      },
+    },
+    weight: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 100,
+        step: 0.1,
+      },
+    },
+  },
+  decorators: [
+    (Story: FC) => (
+      <div style={{ backgroundColor: 'white', padding: '40px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
-const Template: ComponentStory<typeof AttributesCard> = (args) => <AttributesCard {...args} />;
+const Template: ComponentStory<typeof StoryAttributesCard> = (args) => (
+  <StoryAttributesCard {...args} weight={args.weight * 10} height={args.height * 10} />
+);
 
-export const Bulbasaur = Template.bind({});
+export const AttributesCard = Template.bind({});
 
-Bulbasaur.args = {
-  pokemon: bulbasaurData,
-};
-
-export const Pikachu = Template.bind({});
-
-Pikachu.args = {
-  pokemon: pikachuData,
-};
-
-export const Charizard = Template.bind({});
-
-Charizard.args = {
-  pokemon: charizardData,
-};
-
-export const Blastoise = Template.bind({});
-
-Blastoise.args = {
-  pokemon: blastoiseData,
-};
-
-export const Bellsprout = Template.bind({});
-
-Bellsprout.args = {
-  pokemon: bellsproutData,
+AttributesCard.args = {
+  ability: bulbasaurData.abilities[0],
+  height: bulbasaurData.height / 10,
+  weight: bulbasaurData.weight / 10,
 };

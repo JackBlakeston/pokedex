@@ -1,27 +1,28 @@
-import { IPokemon } from 'interfaces';
 import classes from './AttributesCard.module.scss';
 
 interface IProps {
-  pokemon: IPokemon;
+  height: number;
+  weight: number;
+  ability: string;
 }
 
-const AttributesCard = ({ pokemon }: IProps) => {
-  const heightMeters = pokemon.height / 10;
-  const weightKilograms = pokemon.weight / 10;
+const AttributesCard = ({ height, weight, ability }: IProps) => {
+  const heightMeters = height / 10;
+  const weightKilograms = weight / 10;
 
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.infoLine}>
-        <div className={classes.infoLabel}>Height</div>
-        {heightMeters} m
+      <div className={classes.attributeLine}>
+        <div className={classes.attributeLabel}>Height</div>
+        <span className={classes.attributeValue}>{heightMeters}</span> m
       </div>
-      <div className={classes.infoLine}>
-        <div className={classes.infoLabel}>Weight</div>
-        {weightKilograms} kg
+      <div className={classes.attributeLine}>
+        <div className={classes.attributeLabel}>Weight</div>
+        <span className={classes.attributeValue}>{weightKilograms}</span> kg
       </div>
-      <div className={classes.infoLine}>
-        <div className={classes.infoLabel}>Ability</div>
-        {pokemon.abilities[0]}
+      <div className={classes.attributeLine}>
+        <div className={classes.attributeLabel}>Ability</div>
+        {ability}
       </div>
     </div>
   );
