@@ -1,10 +1,10 @@
 import { ComponentStory } from '@storybook/react';
 
-import { Button } from 'components/generic/';
+import { Button as StoryButton } from 'components/generic/';
 
 export default {
   title: 'Components/Generic/Button',
-  component: Button,
+  component: StoryButton,
   argTypes: {
     size: {
       control: 'select',
@@ -12,11 +12,11 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof StoryButton> = (args) => <StoryButton {...args} />;
 
-export const Default = Template.bind({});
+export const Button = Template.bind({});
 
-Default.args = {
+Button.args = {
   color: '#F95587',
   text: 'Button',
   size: 'medium',

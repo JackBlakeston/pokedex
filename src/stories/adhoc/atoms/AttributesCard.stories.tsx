@@ -6,7 +6,7 @@ import { AttributesCard as StoryAttributesCard } from 'components/adhoc';
 import { bulbasaurData } from 'stories/assets/pokemonData';
 
 export default {
-  title: 'Components/Atoms/AttributesCard',
+  title: 'Components/Adhoc/Atoms/AttributesCard',
   component: StoryAttributesCard,
   argTypes: {
     height: {

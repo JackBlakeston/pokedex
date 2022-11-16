@@ -5,7 +5,7 @@ import { StatBar as StoryStatBar } from 'components/adhoc';
 import { POKEMON_STATS } from 'enums';
 
 export default {
-  title: 'Components/Atoms/StatBar',
+  title: 'Components/Adhoc/Atoms/StatBar',
   component: StoryStatBar,
   argTypes: {
     stat: {

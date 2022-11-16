@@ -5,7 +5,7 @@ import { TypeBadge as StoryTypeBadge } from 'components/adhoc';
 import { POKEMON_TYPES } from 'enums';
 
 export default {
-  title: 'Components/Atoms/TypeBadge',
+  title: 'Components/Adhoc/Atoms/TypeBadge',
   component: StoryTypeBadge,
 };
 

@@ -7,17 +7,18 @@ import TypeBadge from './atoms/TypeBadge/TypeBadge';
 import StatsDisplay from './molecules/StatsDisplay/StatsDisplay';
 import TypesDisplay from './molecules/TypesDisplay/TypesDisplay';
 
-import PokemonCard from './PokemonCard/PokemonCard';
-import PokemonDetailsModal from './PokemonDetailsModal/PokemonDetailsModal';
-import PokemonGridPage from './PokemonGridPage/PokemonGridPage';
+// Organisms
+import PokemonCard from './organisms/PokemonCard/PokemonCard';
+import PokemonDetailsModal from './organisms/PokemonDetailsModal/PokemonDetailsModal';
+import GridPage from './organisms/GridPage/GridPage';
 import PokemonImage from './atoms/PokemonImage/PokemonImage';
-import GridCarousel from './GridCarousel/GridCarousel';
+import GridCarousel from './organisms/GridCarousel/GridCarousel';
 
 export {
   AttributesCard,
   PokemonCard,
   PokemonDetailsModal,
-  PokemonGridPage,
+  GridPage,
   PokemonImage,
   StatBar,
   StatsDisplay,

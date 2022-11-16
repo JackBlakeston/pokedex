@@ -11,7 +11,7 @@ import {
 } from 'stories/assets/pokemonData';
 
 export default {
-  title: 'Components/Molecules/StatsDisplay',
+  title: 'Components/Adhoc/Molecules/StatsDisplay',
   component: StatsDisplay,
 };
 

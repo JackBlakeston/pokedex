@@ -11,7 +11,7 @@ import {
 } from '../../assets/pokemonData';
 
 export default {
-  title: 'Components/Atoms/PokemonImage',
+  title: 'Components/Adhoc/Atoms/PokemonImage',
   component: StoryPokemonImage,
   argTypes: {
     color: {

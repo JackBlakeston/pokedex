@@ -11,7 +11,7 @@ import {
 } from 'stories/assets/pokemonData';
 
 export default {
-  title: 'Components/Molecules/TypesDisplay',
+  title: 'Components/Adhoc/Molecules/TypesDisplay',
   component: TypesDisplay,
 };
 

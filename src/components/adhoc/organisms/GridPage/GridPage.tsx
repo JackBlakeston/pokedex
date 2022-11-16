@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 
-import classes from './PokemonGridPage.module.scss';
+import classes from './GridPage.module.scss';
 
 import { PokemonDetailsModal } from 'components/adhoc';
 import { PokemonCard } from 'components/adhoc';
@@ -16,7 +16,7 @@ interface IProps {
   containerId?: string;
 }
 
-const PokemonGridPage = ({ idList, classNames, containerId }: IProps) => {
+const GridPage = ({ idList, classNames, containerId }: IProps) => {
   const [selectedPokemon, setSelectedPokemon] = useState<IPokemon | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -35,7 +35,13 @@ const PokemonGridPage = ({ idList, classNames, containerId }: IProps) => {
 
   const renderModal = useCallback(() => {
     if (selectedPokemon) {
-      return <PokemonDetailsModalMemoized pokemon={selectedPokemon} isOpen={isModalOpen} setIsOpen={setIsModalOpen} />;
+      return (
+        <PokemonDetailsModalMemoized
+          pokemon={selectedPokemon}
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+        />
+      );
     }
   }, [selectedPokemon, isModalOpen]);
   return (
@@ -48,4 +54,4 @@ const PokemonGridPage = ({ idList, classNames, containerId }: IProps) => {
   );
 };
 
-export default PokemonGridPage;
+export default GridPage;

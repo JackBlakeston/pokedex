@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import { PokemonGridPage } from 'components/adhoc';
+import { GridPage as StoryGridPage } from 'components/adhoc';
 
 const page1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const page2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -11,8 +11,8 @@ const page6 = [51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
 const page7 = [901, 902, 903, 904, 905];
 
 export default {
-  title: 'Components/PokemonGridPage',
-  component: PokemonGridPage,
+  title: 'Components/Adhoc/Organisms/GridPage',
+  component: StoryGridPage,
   argTypes: {
     idList: {
       control: 'select',
@@ -21,12 +21,12 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof PokemonGridPage> = (args) => (
-  <PokemonGridPage {...args} key={JSON.stringify(args)} />
+const Template: ComponentStory<typeof StoryGridPage> = (args) => (
+  <StoryGridPage {...args} key={JSON.stringify(args)} />
 );
 
-export const Grid = Template.bind({});
+export const GridPage = Template.bind({});
 
-Grid.args = {
+GridPage.args = {
   idList: page1,
 };

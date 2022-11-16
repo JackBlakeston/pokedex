@@ -2,12 +2,12 @@ import { memo } from 'react';
 
 import classes from './GridCarousel.module.scss';
 
-import { PokemonGridPage } from 'components/adhoc';
+import { GridPage } from 'components/adhoc';
 import { Button } from 'components/generic';
 
 import useCarousel from 'hooks/useCarousel';
 
-const PokemonGridPageMemoized = memo(PokemonGridPage);
+const PokemonGridPageMemoized = memo(GridPage);
 
 const GridCarousel = () => {
   const { pageClassNames, pageIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick } =
@@ -16,9 +16,21 @@ const GridCarousel = () => {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
-        <PokemonGridPageMemoized idList={pageIdLists.pageA} classNames={pageClassNames.pageA} containerId='pageA' />
-        <PokemonGridPageMemoized idList={pageIdLists.pageB} classNames={pageClassNames.pageB} containerId='pageB' />
-        <PokemonGridPageMemoized idList={pageIdLists.pageC} classNames={pageClassNames.pageC} containerId='pageC' />
+        <PokemonGridPageMemoized
+          idList={pageIdLists.pageA}
+          classNames={pageClassNames.pageA}
+          containerId='pageA'
+        />
+        <PokemonGridPageMemoized
+          idList={pageIdLists.pageB}
+          classNames={pageClassNames.pageB}
+          containerId='pageB'
+        />
+        <PokemonGridPageMemoized
+          idList={pageIdLists.pageC}
+          classNames={pageClassNames.pageC}
+          containerId='pageC'
+        />
       </div>
       <div className={classes.buttonContainer}>
         <Button
