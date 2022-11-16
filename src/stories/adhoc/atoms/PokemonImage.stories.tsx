@@ -2,10 +2,10 @@ import { ComponentStory } from '@storybook/react';
 
 import { PokemonImage } from 'components/adhoc';
 import { POKEMON_COLORS } from 'constants/pokemonColours';
-import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from './assets/pokemonData';
+import { bellsproutData, blastoiseData, bulbasaurData, charizardData, pikachuData } from '../../assets/pokemonData';
 
 export default {
-  title: 'Components/PokemonImage',
+  title: 'Components/Atoms/PokemonImage',
   component: PokemonImage,
   argTypes: {
     color: {

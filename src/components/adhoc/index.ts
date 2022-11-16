@@ -6,7 +6,7 @@ import TypeBadge from './atoms/TypeBadge/TypeBadge';
 import PokemonCard from './PokemonCard/PokemonCard';
 import PokemonDetailsModal from './PokemonDetailsModal/PokemonDetailsModal';
 import PokemonGridPage from './PokemonGridPage/PokemonGridPage';
-import PokemonImage from './PokemonImage/PokemonImage';
+import PokemonImage from './atoms/PokemonImage/PokemonImage';
 import StatsDisplay from './StatsDisplay/StatsDisplay';
 import TypesDisplay from './TypesDisplay/TypesDisplay';
 import GridCarousel from './GridCarousel/GridCarousel';
