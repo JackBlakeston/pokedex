@@ -14,6 +14,7 @@ interface IProps {
 
 const PokemonCard = ({ pokemonId, onClick }: IProps) => {
   const pokemon = usePokemon(pokemonId);
+
   const handleClick = () => {
     if (pokemon) {
       onClick(pokemon);
@@ -24,7 +25,7 @@ const PokemonCard = ({ pokemonId, onClick }: IProps) => {
     if (pokemon) {
       return (
         <div className={classes.mainContainer} onClick={handleClick} data-testid='Card'>
-          <PokemonImage pokemon={pokemon} size='small' />
+          <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size='small' />
           <div className={classes.displaysContainer}>
             <div>#{pokemon.id}</div>
             <div className={classes.name}>{pokemon.name}</div>
