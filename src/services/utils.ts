@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { POKEMON_COLORS } from 'constants/pokemonColours';
+import { STAT_MAP } from 'constants/stringMaps';
 
 import { IAbilityRes, IStatRes, ITypeRes } from 'interfaces';
 
@@ -17,7 +18,7 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
   });
   const stats = data.stats.map((statRes: IStatRes) => {
     return {
-      name: statRes.stat.name,
+      name: STAT_MAP[statRes.stat.name as keyof typeof STAT_MAP],
       value: statRes.base_stat,
     };
   });
