@@ -1,14 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { POKEMON_COLORS } from '../assets/data/pokemonColours';
 import { STAT_MAP } from '../constants/stringMaps';
+import { IMAGES_URL } from 'constants/strings';
 
+import { IResponseData } from 'interfaces/pokeapi';
 import { IAbilityRes, IStatRes, ITypeRes } from '../interfaces';
-
-const IMAGES_URL = 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/';
-
-interface IResponseData {
-  [key: string]: any;
-}
 
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
   const heightMeters = data.height / 10;

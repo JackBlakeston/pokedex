@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export interface IResponseData {
+  [key: string]: any;
+}
+
 export interface IAbilityRes {
   ability: IResponseItem;
   is_hidden: boolean;
