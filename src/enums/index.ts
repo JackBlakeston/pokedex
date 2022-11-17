@@ -52,3 +52,9 @@ export enum POKEMON_STATS {
   SPECIAL_DEFENSE = 'SpDef',
   SPEED = 'Speed',
 }
+
+export enum SIZES {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}

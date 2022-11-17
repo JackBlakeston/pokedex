@@ -7,6 +7,8 @@ import { Button } from '../../../../components/generic';
 
 import useCarousel from '../../../../hooks/useCarousel';
 
+import { SIZES } from '../../../../enums';
+
 const PokemonGridPageMemoized = memo(GridPage);
 
 const GridCarousel = () => {
@@ -37,7 +39,7 @@ const GridCarousel = () => {
           onClick={handlePreviousPageButtonClick}
           text='Previous'
           color='#F29C5E'
-          size='medium'
+          size={SIZES.MEDIUM}
           className={classes.button}
         />
         <Button
@@ -45,7 +47,7 @@ const GridCarousel = () => {
           text='Next'
           // color='#9e84b7'
           color='#F29C5E'
-          size='medium'
+          size={SIZES.MEDIUM}
           className={classes.button}
         />
       </div>

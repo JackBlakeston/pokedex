@@ -1,7 +1,8 @@
+import { MouseEvent } from 'react';
+
 import classes from './Modal.module.scss';
 
 import { ReactComponent as Close } from '../../../assets/icons/close.svg';
-import { MouseEvent } from 'react';
 
 interface IProps {
   children: React.ReactNode;

@@ -1,13 +1,14 @@
-import React from 'react';
 import { mount } from 'cypress/react';
 
 import { Button } from '..';
+
+import { SIZES } from 'enums';
 
 const BTN_COLOR = 'rgb(255, 165, 0)';
 
 const mountButton = () => {
   const spy = cy.spy().as('spy');
-  mount(<Button text='TEST' color='orange' onClick={spy} size='large' />);
+  mount(<Button text='TEST' color='orange' onClick={spy} size={SIZES.MEDIUM} />);
 };
 
 describe('Button', () => {
