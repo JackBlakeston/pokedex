@@ -7,7 +7,7 @@ interface IProps {
   text: string;
   color: string;
   size: 'small' | 'medium' | 'large';
-  className: string;
+  className?: string;
 }
 
 const Button = ({ onClick, text, color, size, className }: IProps) => {
