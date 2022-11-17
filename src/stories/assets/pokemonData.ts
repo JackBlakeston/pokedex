@@ -32,8 +32,8 @@ export const bulbasaurData = {
   ],
   types: [POKEMON_TYPES.GRASS, POKEMON_TYPES.POISON],
   abilities: ['overgrow', 'chlorophyll'],
-  weight: 69,
-  height: 7,
+  weight: 6.9,
+  height: 0.7,
   color: '#6ca584',
 };
 
@@ -69,8 +69,8 @@ export const pikachuData = {
   ],
   types: [POKEMON_TYPES.ELECTRIC],
   abilities: ['static', 'lightning-rod'],
-  weight: 60,
-  height: 4,
+  weight: 6,
+  height: 0.4,
   color: '#d7bb70',
 };
 
@@ -106,8 +106,8 @@ export const charizardData = {
   ],
   types: [POKEMON_TYPES.FIRE, POKEMON_TYPES.FLYING],
   abilities: ['blaze', 'solar-power'],
-  weight: 905,
-  height: 17,
+  weight: 90.5,
+  height: 1.7,
   color: '#b79b7c',
 };
 
@@ -143,8 +143,8 @@ export const blastoiseData = {
   ],
   types: [POKEMON_TYPES.WATER],
   abilities: ['torrent', 'rain-dish'],
-  weight: 855,
-  height: 16,
+  weight: 85.5,
+  height: 1.6,
   color: '#91939e',
 };
 
@@ -180,7 +180,7 @@ export const bellsproutData = {
   ],
   types: [POKEMON_TYPES.GRASS, POKEMON_TYPES.POISON],
   abilities: ['chlorophyll', 'gluttony'],
-  weight: 40,
-  height: 7,
+  weight: 4,
+  height: 0.7,
   color: '#afbf81',
 };

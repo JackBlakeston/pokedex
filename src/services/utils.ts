@@ -11,9 +11,12 @@ interface IResponseData {
 }
 
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
-  const { name, height, weight } = data;
-
-  const formattedName = (name as string).split('-')[0];
+  const heightMeters = data.height / 10;
+  const weightKilograms = data.weight / 10;
+  const formattedName = (data.name as string).split('-')[0];
+  const idPadded = id.toString().padStart(3, '0');
+  const imgUrl = `${IMAGES_URL}${idPadded}.png`;
+  const color = POKEMON_COLORS[id as keyof typeof POKEMON_COLORS];
 
   const abilities = data?.abilities?.map((abilityRes: IAbilityRes) => {
     return abilityRes.ability.name;
@@ -28,10 +31,6 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     return typeRes.type.name.toUpperCase();
   });
 
-  const idPadded = id.toString().padStart(3, '0');
-  const imgUrl = `${IMAGES_URL}${idPadded}.png`;
-  const color = POKEMON_COLORS[id as keyof typeof POKEMON_COLORS];
-
   const pokemon = {
     id: idPadded,
     name: formattedName,
@@ -39,8 +38,8 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     stats,
     types,
     abilities,
-    weight,
-    height,
+    weight: weightKilograms,
+    height: heightMeters,
     color,
   };
 

@@ -36,13 +36,13 @@ export default {
 };
 
 const Template: ComponentStory<typeof StoryAttributesCard> = (args) => (
-  <StoryAttributesCard {...args} weight={args.weight * 10} height={args.height * 10} />
+  <StoryAttributesCard {...args} weight={args.weight} height={args.height} />
 );
 
 export const AttributesCard = Template.bind({});
 
 AttributesCard.args = {
   ability: bulbasaurData.abilities[0],
-  height: bulbasaurData.height / 10,
-  weight: bulbasaurData.weight / 10,
+  height: bulbasaurData.height,
+  weight: bulbasaurData.weight,
 };

@@ -7,18 +7,15 @@ interface IProps {
 }
 
 const AttributesCard = ({ height, weight, ability }: IProps) => {
-  const heightMeters = height / 10;
-  const weightKilograms = weight / 10;
-
   return (
     <div className={classes.mainContainer}>
       <div className={classes.attributeLine}>
         <div className={classes.attributeLabel}>Height</div>
-        <span className={classes.attributeValue}>{heightMeters}</span> m
+        <span className={classes.attributeValue}>{height}</span> m
       </div>
       <div className={classes.attributeLine}>
         <div className={classes.attributeLabel}>Weight</div>
-        <span className={classes.attributeValue}>{weightKilograms}</span> kg
+        <span className={classes.attributeValue}>{weight}</span> kg
       </div>
       <div className={classes.attributeLine}>
         <div className={classes.attributeLabel}>Ability</div>
