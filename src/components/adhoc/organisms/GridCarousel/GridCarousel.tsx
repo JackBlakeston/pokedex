@@ -46,7 +46,7 @@ const GridCarousel = () => {
         />
         <Button
           onClick={handleNextPageButtonClick}
-          text={DIRECTIONS.PREVIOUS}
+          text={DIRECTIONS.NEXT}
           color={COLOR_PRIMARY}
           size={SIZES.MEDIUM}
           className={classes.button}

@@ -60,8 +60,8 @@ export enum SIZES {
 }
 
 export enum DIRECTIONS {
-  NEXT = 'next',
-  PREVIOUS = 'previous',
+  NEXT = 'Next',
+  PREVIOUS = 'Previous',
 }
 
 export enum GRID_PAGES {
