@@ -1,6 +1,6 @@
 import classes from './TypesDisplay.module.scss';
 
-import { TypeBadge } from 'components/adhoc';
+import { TypeBadge } from '../../../../components/adhoc';
 
 import { POKEMON_TYPES } from 'enums';
 

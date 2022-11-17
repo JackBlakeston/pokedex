@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 
-import { PokemonImage as StoryPokemonImage } from 'components/adhoc';
-import { POKEMON_COLORS } from 'constants/pokemonColours';
+import { PokemonImage as StoryPokemonImage } from '../../../components/adhoc';
+import { POKEMON_COLORS } from '../../../constants/pokemonColours';
 import {
   bellsproutData,
   blastoiseData,

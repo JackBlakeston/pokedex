@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import { Button as StoryButton } from 'components/generic/';
+import { Button as StoryButton } from '../../components/generic/';
 
 export default {
   title: 'Components/Generic/Button',

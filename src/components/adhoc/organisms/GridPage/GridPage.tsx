@@ -2,8 +2,8 @@ import { memo, useCallback, useState } from 'react';
 
 import classes from './GridPage.module.scss';
 
-import { PokemonDetailsModal } from 'components/adhoc';
-import { PokemonCard } from 'components/adhoc';
+import { PokemonDetailsModal } from '../../../../components/adhoc';
+import { PokemonCard } from '../../../../components/adhoc';
 
 import { IPokemon } from 'interfaces';
 

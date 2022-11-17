@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import { PokemonCard as StoryPokemonCard } from 'components/adhoc';
+import { PokemonCard as StoryPokemonCard } from '../../../components/adhoc';
 
 export default {
   title: 'Components/Adhoc/Organisms/PokemonCard',

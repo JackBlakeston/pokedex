@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { POKEMON_COLORS } from 'constants/pokemonColours';
-import { STAT_MAP } from 'constants/stringMaps';
+import { POKEMON_COLORS } from '../constants/pokemonColours';
+import { STAT_MAP } from '../constants/stringMaps';
 
 import { IAbilityRes, IStatRes, ITypeRes } from 'interfaces';
 

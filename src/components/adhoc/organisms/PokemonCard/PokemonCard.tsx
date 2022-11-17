@@ -1,11 +1,10 @@
 import classes from './PokemonCard.module.scss';
 
-import { PokemonImage } from 'components/adhoc';
-import { TypesDisplay } from 'components/adhoc';
+import { PokemonImage, TypesDisplay } from '../../../../components/adhoc';
 
-import usePokemon from 'hooks/usePokemon';
+import usePokemon from '../../../../hooks/usePokemon';
 
-import { IPokemon } from 'interfaces';
+import { IPokemon } from '../../../../interfaces';
 
 interface IProps {
   pokemonId: number;

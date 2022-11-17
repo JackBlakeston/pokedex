@@ -1,6 +1,6 @@
 import classes from './TypeBadge.module.scss';
 
-import { POKEMON_TYPES, TYPE_COLORS } from 'enums';
+import { POKEMON_TYPES, TYPE_COLORS } from '../../../../enums';
 
 interface IProps {
   type: POKEMON_TYPES;

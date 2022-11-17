@@ -1,7 +1,7 @@
 import classes from './PokemonDetailsModal.module.scss';
 
-import { Modal } from 'components/generic';
-import { TypesDisplay, PokemonImage, AttributesCard, StatsDisplay } from 'components/adhoc';
+import { Modal } from '../../../../components/generic';
+import { TypesDisplay, PokemonImage, AttributesCard, StatsDisplay } from '../../../../components/adhoc';
 
 import { IPokemon } from 'interfaces';
 

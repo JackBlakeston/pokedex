@@ -1,6 +1,6 @@
 import classes from './PokemonImage.module.scss';
 
-import { ReactComponent as PokeballBackground } from 'assets/icons/pokeball.svg';
+import { ReactComponent as PokeballBackground } from '../../../../assets/icons/pokeball.svg';
 
 interface IProps {
   imgUrl: string;

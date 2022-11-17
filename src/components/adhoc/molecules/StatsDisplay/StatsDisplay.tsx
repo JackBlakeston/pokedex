@@ -1,6 +1,6 @@
 import classes from './StatsDisplay.module.scss';
 
-import { StatBar } from 'components/adhoc';
+import { StatBar } from '../../../../components/adhoc';
 
 import { IPokemon } from 'interfaces';
 

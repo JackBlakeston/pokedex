@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
 
-import { PokemonDetailsModal } from 'components/adhoc';
+import { PokemonDetailsModal } from '../../../components/adhoc';
 
 import {
   bellsproutData,
@@ -9,7 +9,7 @@ import {
   bulbasaurData,
   charizardData,
   pikachuData,
-} from 'stories/assets/pokemonData';
+} from '../../../stories/assets/pokemonData';
 
 export default {
   title: 'Components/Adhoc/Organisms/PokemonDetailsModal',

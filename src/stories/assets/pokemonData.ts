@@ -1,4 +1,4 @@
-import { POKEMON_STATS, POKEMON_TYPES } from 'enums';
+import { POKEMON_STATS, POKEMON_TYPES } from '../../enums';
 
 export const bulbasaurData = {
   id: '001',

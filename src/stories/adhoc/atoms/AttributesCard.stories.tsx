@@ -1,9 +1,9 @@
 import { ComponentStory } from '@storybook/react';
 import { FC } from 'react';
 
-import { AttributesCard as StoryAttributesCard } from 'components/adhoc';
+import { AttributesCard as StoryAttributesCard } from '../../../components/adhoc';
 
-import { bulbasaurData } from 'stories/assets/pokemonData';
+import { bulbasaurData } from '../../../stories/assets/pokemonData';
 
 export default {
   title: 'Components/Adhoc/Atoms/AttributesCard',

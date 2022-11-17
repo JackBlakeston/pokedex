@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import { GridPage as StoryGridPage } from 'components/adhoc';
+import { GridPage as StoryGridPage } from '../../../components/adhoc';
 
 const page1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const page2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];

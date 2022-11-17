@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { IPokemon } from 'interfaces';
-import { getPokemonById } from 'services/pokeapiService';
+import { IPokemon } from '../interfaces';
+import { getPokemonById } from '../services/pokeapiService';
 
 const usePokemon = (id: number) => {
   const [pokemon, setPokemon] = useState<IPokemon>();

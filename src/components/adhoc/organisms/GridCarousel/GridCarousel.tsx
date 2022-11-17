@@ -2,10 +2,10 @@ import { memo } from 'react';
 
 import classes from './GridCarousel.module.scss';
 
-import { GridPage } from 'components/adhoc';
-import { Button } from 'components/generic';
+import { GridPage } from '../../../../components/adhoc';
+import { Button } from '../../../../components/generic';
 
-import useCarousel from 'hooks/useCarousel';
+import useCarousel from '../../../../hooks/useCarousel';
 
 const PokemonGridPageMemoized = memo(GridPage);
 
