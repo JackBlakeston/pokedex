@@ -1,14 +1,17 @@
 import classes from './StatBar.module.scss';
 
-import { POKEMON_STATS } from 'enums';
+import { STAT_BAR_FACTOR } from 'constants/values';
+
+import { POKEMON_STATS } from '../../../../enums';
 
 interface IProps {
   statName: POKEMON_STATS;
   value: number;
   color: string;
 }
+
 const StatBar = ({ statName, value, color }: IProps) => {
-  const width = `${value / 1.5}%`;
+  const width = `${value / STAT_BAR_FACTOR}%`;
   return (
     <div className={classes.mainContainer}>
       <span>{statName}</span>

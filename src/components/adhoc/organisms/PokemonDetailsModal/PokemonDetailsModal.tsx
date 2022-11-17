@@ -3,7 +3,8 @@ import classes from './PokemonDetailsModal.module.scss';
 import { Modal } from '../../../../components/generic';
 import { TypesDisplay, PokemonImage, AttributesCard, StatsDisplay } from '../../../../components/adhoc';
 
-import { IPokemon } from 'interfaces';
+import { SIZES } from '../../../../enums';
+import { IPokemon } from '../../../../interfaces';
 
 interface IProps {
   pokemon: IPokemon;
@@ -15,7 +16,7 @@ const PokemonCard = ({ pokemon, isOpen, setIsOpen }: IProps) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className={classes.mainContainer} data-testid='DetailsModal'>
-        <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size='large' />
+        <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size={SIZES.LARGE} />
         <div className={classes.displaysContainer}>
           <div>#{pokemon.id}</div>
           <div className={classes.name}>{pokemon.name}</div>

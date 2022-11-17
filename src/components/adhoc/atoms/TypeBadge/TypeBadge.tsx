@@ -10,6 +10,7 @@ const TypeBadge = ({ type }: IProps) => {
   const typeBadgeStyles = {
     backgroundColor: TYPE_COLORS[type],
   };
+
   return (
     <div className={classes.mainContainer} style={typeBadgeStyles}>
       {type}
