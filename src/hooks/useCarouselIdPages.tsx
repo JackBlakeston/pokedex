@@ -1,23 +1,21 @@
 import { useState, useTransition } from 'react';
 
-const FIRST_POKEMON_ID = 1;
-const LAST_POKEMON_ID = 905;
-const PAGE_SIZE = 10;
-const FIRST_PAGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const SEMI_FINAL_PAGE = [891, 892, 893, 894, 895, 896, 897, 898, 899, 900];
-const FINAL_PAGE = [901, 902, 903, 904, 905];
+import {
+  FINAL_PAGE,
+  FIRST_PAGE,
+  FIRST_POKEMON_ID,
+  LAST_POKEMON_ID,
+  PAGE_SIZE,
+  SECOND_PAGE,
+  SEMI_FINAL_PAGE,
+} from '../constants/values';
 
-interface ICarouselPages {
-  current: number[];
-  next: number[];
-  prev: number[];
-}
+import { ICarouselIdPages } from '../interfaces/carousel';
 
 const useCarouselIdPages = () => {
-  const { initialCurrentPage, initialNextPage } = getInitialPages();
-  const [pages, setPages] = useState<ICarouselPages>({
-    current: initialCurrentPage,
-    next: initialNextPage,
+  const [pages, setPages] = useState<ICarouselIdPages>({
+    current: FIRST_PAGE,
+    next: SECOND_PAGE,
     prev: FINAL_PAGE,
   });
 
@@ -48,22 +46,6 @@ const useCarouselIdPages = () => {
   };
 
   return { ...pages, goToNextPage, goToPrevPage };
-};
-
-const getInitialPages = () => {
-  const initialCurrentPage = Array(PAGE_SIZE);
-  const initialNextPage = Array(PAGE_SIZE);
-  const initialPrevPage = Array(PAGE_SIZE);
-
-  for (let i = 1; i <= PAGE_SIZE; i++) {
-    const arrayIndex = i - FIRST_POKEMON_ID;
-    const currentPagePokemonId = i;
-    const nextPagePokemonId = i + PAGE_SIZE;
-
-    initialCurrentPage[arrayIndex] = currentPagePokemonId;
-    initialNextPage[arrayIndex] = nextPagePokemonId;
-  }
-  return { initialCurrentPage, initialNextPage, initialPrevPage };
 };
 
 const getNewPrevPage = (oldPreviousPage: number[]) => {

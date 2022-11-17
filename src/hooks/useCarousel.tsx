@@ -3,15 +3,17 @@ import { useCallback, useEffect, useState } from 'react';
 import useCarouselIdPages from './useCarouselIdPages';
 
 import { SLIDE_ANIMATION_TIME } from '../constants/values';
+import { SPACE } from '../constants/strings';
 
 import { IClassNames, IPageClassNames, IPageIdLists } from '../interfaces';
+import { DIRECTIONS, GRID_PAGES } from '../enums';
 
 const useCarousel = (classes: IClassNames) => {
   const { current, next, prev, goToNextPage, goToPrevPage } = useCarouselIdPages();
 
   const [gridPagesClassNames, setGridPagesClassNames] = useState<IPageClassNames>({
     gridPageA: classes.currentPage,
-    gridPageB: `${classes.nextPage}`,
+    gridPageB: classes.nextPage,
     gridPageC: classes.previousPage,
   });
 
@@ -23,21 +25,21 @@ const useCarousel = (classes: IClassNames) => {
 
   useEffect(() => {
     const currentGridPageId = document.getElementsByClassName(classes.currentPage)[0].id;
-    if (currentGridPageId === 'gridPageA') {
+    if (currentGridPageId === GRID_PAGES.A) {
       setGridPagesIdLists({
         gridPageA: current,
         gridPageB: next,
         gridPageC: prev,
       });
     }
-    if (currentGridPageId === 'gridPageB') {
+    if (currentGridPageId === GRID_PAGES.B) {
       setGridPagesIdLists({
         gridPageA: prev,
         gridPageB: current,
         gridPageC: next,
       });
     }
-    if (currentGridPageId === 'gridPageC') {
+    if (currentGridPageId === GRID_PAGES.C) {
       setGridPagesIdLists({
         gridPageA: next,
         gridPageB: prev,
@@ -46,40 +48,18 @@ const useCarousel = (classes: IClassNames) => {
     }
   }, [current, next, prev]);
 
-  const disableButtonsDuringAnimation = useCallback(() => {
-    const buttons = document.getElementsByClassName(classes.button);
-    Array.from(buttons).forEach((buttonElement) => {
-      buttonElement.classList.add(classes.disabledButton);
-    });
-    setTimeout(() => {
-      Array.from(buttons).forEach((buttonElement) => {
-        buttonElement.classList.remove(classes.disabledButton);
-      });
-    }, SLIDE_ANIMATION_TIME);
-  }, []);
-
-  const addHiddenClassWhereNecessary = useCallback((className: string, direction: 'previous' | 'next') => {
-    if (direction === 'next' && className === classes.nextPage) {
-      return `${className} ${classes.hidden}`;
-    }
-    if (direction === 'previous' && className === classes.previousPage) {
-      return `${className} ${classes.hidden}`;
-    }
-    return className;
-  }, []);
-
   const handleNextPageButtonClick = () => {
     const pageAClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageA),
-      'next',
+      DIRECTIONS.NEXT,
     );
     const pageBClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageB),
-      'next',
+      DIRECTIONS.NEXT,
     );
     const pageCClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageC),
-      'next',
+      DIRECTIONS.NEXT,
     );
     setGridPagesClassNames({
       gridPageA: pageCClassNamesAux,
@@ -93,15 +73,15 @@ const useCarousel = (classes: IClassNames) => {
   const handlePreviousPageButtonClick = () => {
     const pageAClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageA),
-      'previous',
+      DIRECTIONS.PREVIOUS,
     );
     const pageBClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageB),
-      'previous',
+      DIRECTIONS.PREVIOUS,
     );
     const pageCClassNamesAux = addHiddenClassWhereNecessary(
       removeHiddenClass(gridPagesClassNames.gridPageC),
-      'previous',
+      DIRECTIONS.PREVIOUS,
     );
     setGridPagesClassNames({
       gridPageA: pageBClassNamesAux,
@@ -112,6 +92,35 @@ const useCarousel = (classes: IClassNames) => {
     goToPrevPage();
   };
 
+  const disableButtonsDuringAnimation = useCallback(() => {
+    const buttons = document.getElementsByClassName(classes.button);
+    Array.from(buttons).forEach((buttonElement) => {
+      buttonElement.classList.add(classes.disabledButton);
+    });
+    setTimeout(() => {
+      Array.from(buttons).forEach((buttonElement) => {
+        buttonElement.classList.remove(classes.disabledButton);
+      });
+    }, SLIDE_ANIMATION_TIME);
+  }, []);
+
+  const addHiddenClassWhereNecessary = useCallback(
+    (className: string, direction: DIRECTIONS.PREVIOUS | DIRECTIONS.NEXT) => {
+      if (direction === DIRECTIONS.NEXT && className === classes.nextPage) {
+        return `${className} ${classes.hidden}`;
+      }
+      if (direction === DIRECTIONS.PREVIOUS && className === classes.previousPage) {
+        return `${className} ${classes.hidden}`;
+      }
+      return className;
+    },
+    [],
+  );
+
+  const removeHiddenClass = useCallback((className: string) => {
+    return className.split(SPACE)[0];
+  }, []);
+
   return {
     gridPagesClassNames,
     gridPagesIdLists,
@@ -119,9 +128,5 @@ const useCarousel = (classes: IClassNames) => {
     handlePreviousPageButtonClick,
   };
 };
-
-const removeHiddenClass = useCallback((className: string) => {
-  return className.split(' ')[0];
-}, []);
 
 export default useCarousel;

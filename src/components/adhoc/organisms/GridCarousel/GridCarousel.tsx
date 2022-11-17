@@ -7,7 +7,9 @@ import { Button } from '../../../../components/generic';
 
 import useCarousel from '../../../../hooks/useCarousel';
 
-import { SIZES } from '../../../../enums';
+import { COLOR_PRIMARY } from '../../../../constants/colors';
+
+import { DIRECTIONS, GRID_PAGES, SIZES } from '../../../../enums';
 
 const PokemonGridPageMemoized = memo(GridPage);
 
@@ -21,31 +23,31 @@ const GridCarousel = () => {
         <PokemonGridPageMemoized
           idList={gridPagesIdLists.gridPageA}
           classNames={gridPagesClassNames.gridPageA}
-          containerId='gridPageA'
+          containerId={GRID_PAGES.A}
         />
         <PokemonGridPageMemoized
           idList={gridPagesIdLists.gridPageB}
           classNames={gridPagesClassNames.gridPageB}
-          containerId='gridPageB'
+          containerId={GRID_PAGES.B}
         />
         <PokemonGridPageMemoized
           idList={gridPagesIdLists.gridPageC}
           classNames={gridPagesClassNames.gridPageC}
-          containerId='gridPageC'
+          containerId={GRID_PAGES.C}
         />
       </div>
       <div className={classes.buttonContainer}>
         <Button
           onClick={handlePreviousPageButtonClick}
-          text='Previous'
-          color='#F29C5E'
+          text={DIRECTIONS.PREVIOUS}
+          color={COLOR_PRIMARY}
           size={SIZES.MEDIUM}
           className={classes.button}
         />
         <Button
           onClick={handleNextPageButtonClick}
-          text='Next'
-          color='#F29C5E'
+          text={DIRECTIONS.PREVIOUS}
+          color={COLOR_PRIMARY}
           size={SIZES.MEDIUM}
           className={classes.button}
         />

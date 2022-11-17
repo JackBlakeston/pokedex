@@ -4,8 +4,14 @@ export interface IPageClassNames {
   gridPageC: string;
 }
 
-export interface IPageIdLists {
+export interface IGridSlidesIdLists {
   gridPageA: number[];
   gridPageB: number[];
   gridPageC: number[];
+}
+
+export interface ICarouselIdPages {
+  current: number[];
+  next: number[];
+  prev: number[];
 }

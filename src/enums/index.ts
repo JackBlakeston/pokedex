@@ -58,3 +58,14 @@ export enum SIZES {
   MEDIUM = 'medium',
   LARGE = 'large',
 }
+
+export enum DIRECTIONS {
+  NEXT = 'next',
+  PREVIOUS = 'previous',
+}
+
+export enum GRID_PAGES {
+  A = 'gridPageA',
+  B = 'gridPageB',
+  C = 'gridPageC',
+}
