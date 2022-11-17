@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import classes from './GridCarousel.module.scss';
 
-import { GridPage } from '../../../../components/adhoc';
+import { GridSlide } from '../../../../components/adhoc';
 import { Button } from '../../../../components/generic';
 
 import useCarousel from '../../../../hooks/useCarousel';
@@ -11,28 +11,32 @@ import { COLOR_PRIMARY } from '../../../../constants/colors';
 
 import { DIRECTIONS, GRID_PAGES, SIZES } from '../../../../enums';
 
-const PokemonGridPageMemoized = memo(GridPage);
+const PokemonGridSlideMemoized = memo(GridSlide);
 
 const GridCarousel = () => {
-  const { gridPagesClassNames, gridPagesIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick } =
-    useCarousel(classes);
+  const {
+    gridSlidesClassNames,
+    gridSlidesIdLists,
+    handleNextPageButtonClick,
+    handlePreviousPageButtonClick,
+  } = useCarousel(classes);
 
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
-        <PokemonGridPageMemoized
-          idList={gridPagesIdLists.gridPageA}
-          classNames={gridPagesClassNames.gridPageA}
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideA}
+          classNames={gridSlidesClassNames.gridSlideA}
           containerId={GRID_PAGES.A}
         />
-        <PokemonGridPageMemoized
-          idList={gridPagesIdLists.gridPageB}
-          classNames={gridPagesClassNames.gridPageB}
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideB}
+          classNames={gridSlidesClassNames.gridSlideB}
           containerId={GRID_PAGES.B}
         />
-        <PokemonGridPageMemoized
-          idList={gridPagesIdLists.gridPageC}
-          classNames={gridPagesClassNames.gridPageC}
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideC}
+          classNames={gridSlidesClassNames.gridSlideC}
           containerId={GRID_PAGES.C}
         />
       </div>

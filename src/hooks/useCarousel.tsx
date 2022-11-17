@@ -11,60 +11,60 @@ import { DIRECTIONS, GRID_PAGES } from '../enums';
 const useCarousel = (classes: IClassNames) => {
   const { current, next, prev, goToNextPage, goToPrevPage } = useCarouselIdPages();
 
-  const [gridPagesClassNames, setGridPagesClassNames] = useState<IPageClassNames>({
-    gridPageA: classes.currentPage,
-    gridPageB: classes.nextPage,
-    gridPageC: classes.previousPage,
+  const [gridSlidesClassNames, setGridSlidesClassNames] = useState<IPageClassNames>({
+    gridSlideA: classes.currentPage,
+    gridSlideB: classes.nextPage,
+    gridSlideC: classes.previousPage,
   });
 
-  const [gridPagesIdLists, setGridPagesIdLists] = useState<IPageIdLists>({
-    gridPageA: current,
-    gridPageB: next,
-    gridPageC: prev,
+  const [gridSlidesIdLists, setGridSlidesIdLists] = useState<IPageIdLists>({
+    gridSlideA: current,
+    gridSlideB: next,
+    gridSlideC: prev,
   });
 
   useEffect(() => {
-    const currentGridPageId = document.getElementsByClassName(classes.currentPage)[0].id;
-    if (currentGridPageId === GRID_PAGES.A) {
-      setGridPagesIdLists({
-        gridPageA: current,
-        gridPageB: next,
-        gridPageC: prev,
+    const currentGridSlideId = document.getElementsByClassName(classes.currentPage)[0].id;
+    if (currentGridSlideId === GRID_PAGES.A) {
+      setGridSlidesIdLists({
+        gridSlideA: current,
+        gridSlideB: next,
+        gridSlideC: prev,
       });
     }
-    if (currentGridPageId === GRID_PAGES.B) {
-      setGridPagesIdLists({
-        gridPageA: prev,
-        gridPageB: current,
-        gridPageC: next,
+    if (currentGridSlideId === GRID_PAGES.B) {
+      setGridSlidesIdLists({
+        gridSlideA: prev,
+        gridSlideB: current,
+        gridSlideC: next,
       });
     }
-    if (currentGridPageId === GRID_PAGES.C) {
-      setGridPagesIdLists({
-        gridPageA: next,
-        gridPageB: prev,
-        gridPageC: current,
+    if (currentGridSlideId === GRID_PAGES.C) {
+      setGridSlidesIdLists({
+        gridSlideA: next,
+        gridSlideB: prev,
+        gridSlideC: current,
       });
     }
   }, [current, next, prev]);
 
   const handleNextPageButtonClick = () => {
     const pageAClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageA),
+      removeHiddenClass(gridSlidesClassNames.gridSlideA),
       DIRECTIONS.NEXT,
     );
     const pageBClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageB),
+      removeHiddenClass(gridSlidesClassNames.gridSlideB),
       DIRECTIONS.NEXT,
     );
     const pageCClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageC),
+      removeHiddenClass(gridSlidesClassNames.gridSlideC),
       DIRECTIONS.NEXT,
     );
-    setGridPagesClassNames({
-      gridPageA: pageCClassNamesAux,
-      gridPageB: pageAClassNamesAux,
-      gridPageC: pageBClassNamesAux,
+    setGridSlidesClassNames({
+      gridSlideA: pageCClassNamesAux,
+      gridSlideB: pageAClassNamesAux,
+      gridSlideC: pageBClassNamesAux,
     });
     disableButtonsDuringAnimation();
     goToNextPage();
@@ -72,21 +72,21 @@ const useCarousel = (classes: IClassNames) => {
 
   const handlePreviousPageButtonClick = () => {
     const pageAClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageA),
+      removeHiddenClass(gridSlidesClassNames.gridSlideA),
       DIRECTIONS.PREVIOUS,
     );
     const pageBClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageB),
+      removeHiddenClass(gridSlidesClassNames.gridSlideB),
       DIRECTIONS.PREVIOUS,
     );
     const pageCClassNamesAux = addHiddenClassWhereNecessary(
-      removeHiddenClass(gridPagesClassNames.gridPageC),
+      removeHiddenClass(gridSlidesClassNames.gridSlideC),
       DIRECTIONS.PREVIOUS,
     );
-    setGridPagesClassNames({
-      gridPageA: pageBClassNamesAux,
-      gridPageB: pageCClassNamesAux,
-      gridPageC: pageAClassNamesAux,
+    setGridSlidesClassNames({
+      gridSlideA: pageBClassNamesAux,
+      gridSlideB: pageCClassNamesAux,
+      gridSlideC: pageAClassNamesAux,
     });
     disableButtonsDuringAnimation();
     goToPrevPage();
@@ -122,8 +122,8 @@ const useCarousel = (classes: IClassNames) => {
   }, []);
 
   return {
-    gridPagesClassNames,
-    gridPagesIdLists,
+    gridSlidesClassNames,
+    gridSlidesIdLists,
     handleNextPageButtonClick,
     handlePreviousPageButtonClick,
   };

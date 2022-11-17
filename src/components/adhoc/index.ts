@@ -10,7 +10,7 @@ import TypesDisplay from './molecules/TypesDisplay/TypesDisplay';
 // Organisms
 import PokemonCard from './organisms/PokemonCard/PokemonCard';
 import PokemonDetailsModal from './organisms/PokemonDetailsModal/PokemonDetailsModal';
-import GridPage from './organisms/GridPage/GridPage';
+import GridSlide from './organisms/GridSlide/GridSlide';
 import PokemonImage from './atoms/PokemonImage/PokemonImage';
 import GridCarousel from './organisms/GridCarousel/GridCarousel';
 
@@ -18,7 +18,7 @@ export {
   AttributesCard,
   PokemonCard,
   PokemonDetailsModal,
-  GridPage,
+  GridSlide,
   PokemonImage,
   StatBar,
   StatsDisplay,

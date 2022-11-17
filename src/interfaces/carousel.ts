@@ -1,13 +1,13 @@
 export interface IPageClassNames {
-  gridPageA: string;
-  gridPageB: string;
-  gridPageC: string;
+  gridSlideA: string;
+  gridSlideB: string;
+  gridSlideC: string;
 }
 
 export interface IGridSlidesIdLists {
-  gridPageA: number[];
-  gridPageB: number[];
-  gridPageC: number[];
+  gridSlideA: number[];
+  gridSlideB: number[];
+  gridSlideC: number[];
 }
 
 export interface ICarouselIdPages {

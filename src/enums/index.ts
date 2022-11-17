@@ -65,7 +65,7 @@ export enum DIRECTIONS {
 }
 
 export enum GRID_PAGES {
-  A = 'gridPageA',
-  B = 'gridPageB',
-  C = 'gridPageC',
+  A = 'gridSlideA',
+  B = 'gridSlideB',
+  C = 'gridSlideC',
 }
