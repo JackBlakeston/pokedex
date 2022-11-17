@@ -26,7 +26,7 @@ const Template: ComponentStory<typeof StoryPokemonImage> = ({ ...args }) => <Sto
 export const Bulbasaur = Template.bind({});
 
 Bulbasaur.args = {
-  size: 'small',
+  size: 'large',
   color: bulbasaurData.color,
   imgUrl: bulbasaurData.imgUrl,
 };
@@ -34,7 +34,7 @@ Bulbasaur.args = {
 export const Pikachu = Template.bind({});
 
 Pikachu.args = {
-  size: 'small',
+  size: 'large',
   color: pikachuData.color,
   imgUrl: pikachuData.imgUrl,
 };
@@ -42,7 +42,7 @@ Pikachu.args = {
 export const Charizard = Template.bind({});
 
 Charizard.args = {
-  size: 'small',
+  size: 'large',
   color: charizardData.color,
   imgUrl: charizardData.imgUrl,
 };
@@ -50,7 +50,7 @@ Charizard.args = {
 export const Blastoise = Template.bind({});
 
 Blastoise.args = {
-  size: 'small',
+  size: 'large',
   color: blastoiseData.color,
   imgUrl: blastoiseData.imgUrl,
 };
@@ -58,7 +58,7 @@ Blastoise.args = {
 export const Bellsprout = Template.bind({});
 
 Bellsprout.args = {
-  size: 'small',
+  size: 'large',
   color: bellsproutData.color,
   imgUrl: bellsproutData.imgUrl,
 };

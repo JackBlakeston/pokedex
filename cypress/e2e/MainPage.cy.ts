@@ -50,7 +50,7 @@ describe('Cards', () => {
     cy.get('img')
       .should('be.visible')
       .and(($img) => {
-        const imgElementArray = Array.from($img);
+        const imgElementArray: HTMLImageElement[] = Array.from($img);
         imgElementArray.forEach((imgElement) => {
           expect(imgElement.naturalWidth).to.be.greaterThan(0);
         });
