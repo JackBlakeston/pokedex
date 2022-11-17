@@ -7,7 +7,7 @@ const FIRST_PAGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const SEMI_FINAL_PAGE = [891, 892, 893, 894, 895, 896, 897, 898, 899, 900];
 const FINAL_PAGE = [901, 902, 903, 904, 905];
 
-interface IPages {
+interface ICarouselPages {
   current: number[];
   next: number[];
   prev: number[];
@@ -15,7 +15,7 @@ interface IPages {
 
 const useCarouselIdPages = () => {
   const { initialCurrentPage, initialNextPage } = getInitialPages();
-  const [pages, setPages] = useState<IPages>({
+  const [pages, setPages] = useState<ICarouselPages>({
     current: initialCurrentPage,
     next: initialNextPage,
     prev: FINAL_PAGE,

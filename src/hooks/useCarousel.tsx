@@ -1,25 +1,10 @@
+import { IClassNames, IPageClassNames, IPageIdLists } from 'interfaces';
 import { useCallback, useEffect, useState } from 'react';
 import useCarouselIdPages from './useCarouselIdPages';
 
-interface IClasses {
-  readonly [key: string]: string;
-}
-
-interface IPageClassNames {
-  pageA: string;
-  pageB: string;
-  pageC: string;
-}
-
-interface IPageIdLists {
-  pageA: number[];
-  pageB: number[];
-  pageC: number[];
-}
-
 const SLIDE_ANIMATION_TIME = 1000;
 
-const useCarousel = (classes: IClasses) => {
+const useCarousel = (classes: IClassNames) => {
   const { current, next, prev, goToNextPage, goToPrevPage } = useCarouselIdPages();
 
   const [pageClassNames, setPageClassNames] = useState<IPageClassNames>({
@@ -71,10 +56,6 @@ const useCarousel = (classes: IClasses) => {
     }, SLIDE_ANIMATION_TIME);
   }, []);
 
-  const removeHiddenClass = useCallback((className: string) => {
-    return className.split(' ')[0];
-  }, []);
-
   const addHiddenClassWhereNecessary = useCallback((className: string, direction: 'previous' | 'next') => {
     if (direction === 'next' && className === classes.nextPage) {
       return `${className} ${classes.hidden}`;
@@ -99,9 +80,18 @@ const useCarousel = (classes: IClasses) => {
   };
 
   const handlePreviousPageButtonClick = () => {
-    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageA), 'previous');
-    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageB), 'previous');
-    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageC), 'previous');
+    const pageAClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(pageClassNames.pageA),
+      'previous',
+    );
+    const pageBClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(pageClassNames.pageB),
+      'previous',
+    );
+    const pageCClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(pageClassNames.pageC),
+      'previous',
+    );
     setPageClassNames({
       pageA: pageBClassNamesAux,
       pageB: pageCClassNamesAux,
@@ -113,5 +103,9 @@ const useCarousel = (classes: IClasses) => {
 
   return { pageClassNames, pageIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick };
 };
+
+const removeHiddenClass = useCallback((className: string) => {
+  return className.split(' ')[0];
+}, []);
 
 export default useCarousel;
