@@ -51,6 +51,4 @@ export enum POKEMON_STATS {
   SPECIAL_ATTACK = 'SpAtk',
   SPECIAL_DEFENSE = 'SpDef',
   SPEED = 'Speed',
-  ACCURACY = 'Acc',
-  EVASION = 'Ev',
 }

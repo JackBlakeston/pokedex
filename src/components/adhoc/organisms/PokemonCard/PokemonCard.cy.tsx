@@ -28,6 +28,13 @@ describe('PokemonCard', () => {
     cy.contains(BULBASAUR.types[1]).should('be.visible');
   });
 
+  it('Renders correct color', () => {
+    mountPokemonCard();
+    cy.get(`[data-testid="ColoredBackground"]`)
+      .should('be.visible')
+      .should('have.property', 'background-color', BULBASAUR.color);
+  });
+
   it('Loads and shows image', () => {
     mountPokemonCard();
     cy.get('img')

@@ -24,7 +24,11 @@ const PokemonImage = ({ imgUrl, color, size }: IProps) => {
     <div className={classes.mainContainer}>
       <img src={imgUrl} className={pokemonImgClasses} />
       <PokeballBackground style={pokeballBackgroundStyle} className={pokeballBackgroundClasses} />
-      <div className={coloredBackgroundClasses} style={coloredBackgroundStyle} />
+      <div
+        className={coloredBackgroundClasses}
+        style={coloredBackgroundStyle}
+        data-testid='ColoredBackground'
+      />
     </div>
   );
 };
