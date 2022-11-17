@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { ComponentStory } from '@storybook/react';
 
 import { PokemonCard as StoryPokemonCard } from '../../../components/adhoc';
@@ -15,6 +16,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story: FC) => (
+      <div style={{ height: '250px', width: '350px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template: ComponentStory<typeof StoryPokemonCard> = (args) => (
