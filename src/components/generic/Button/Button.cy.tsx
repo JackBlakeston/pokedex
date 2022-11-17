@@ -2,7 +2,7 @@ import { mount } from 'cypress/react';
 
 import { Button } from '..';
 
-import { SIZES } from 'enums';
+import { SIZES } from '../../../enums';
 
 const BTN_COLOR = 'rgb(255, 165, 0)';
 

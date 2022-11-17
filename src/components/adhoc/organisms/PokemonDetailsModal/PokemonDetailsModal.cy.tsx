@@ -3,7 +3,7 @@ import { mount } from 'cypress/react18';
 
 import { PokemonDetailsModal } from '../../';
 import { BULBASAUR } from '../../../../assets/mocks/bulbasaur';
-import { POKEMON_STATS } from 'enums';
+import { POKEMON_STATS } from '../../../../enums';
 
 const mountPokemonDetailsModal = () => {
   const spy = cy.spy().as('spy');

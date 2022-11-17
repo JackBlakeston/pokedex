@@ -1,6 +1,6 @@
 import { transformApiPokemonData } from './utils';
 
-import { IPokemon } from 'interfaces';
+import { IPokemon } from '../interfaces';
 
 const POKEAPI_URL = 'https://pokeapi.co/api/v2/';
 

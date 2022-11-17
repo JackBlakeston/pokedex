@@ -2,7 +2,6 @@
 
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "es5",
     "lib": ["es5", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -18,7 +17,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node"],
+    // Global imports disabled due to storybook bug :(
+    "baseUrl": "src"
   },
   "include": ["src", "cypress/support/*.ts"]
 }

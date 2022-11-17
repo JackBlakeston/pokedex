@@ -1,11 +1,11 @@
 export interface IPageClassNames {
-  pageA: string;
-  pageB: string;
-  pageC: string;
+  gridPageA: string;
+  gridPageB: string;
+  gridPageC: string;
 }
 
 export interface IPageIdLists {
-  pageA: number[];
-  pageB: number[];
-  pageC: number[];
+  gridPageA: number[];
+  gridPageB: number[];
+  gridPageC: number[];
 }

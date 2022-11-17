@@ -9,7 +9,7 @@ import {
   charizardData,
   pikachuData,
 } from '../../assets/pokemonData';
-import { POKEMON_COLORS } from '../../../constants/pokemonColours';
+import { POKEMON_COLORS } from '../../../assets/data/pokemonColours';
 
 import { SIZES } from '../../../enums';
 

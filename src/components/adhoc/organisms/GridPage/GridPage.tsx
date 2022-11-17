@@ -5,7 +5,7 @@ import classes from './GridPage.module.scss';
 import { PokemonDetailsModal } from '../../../../components/adhoc';
 import { PokemonCard } from '../../../../components/adhoc';
 
-import { IPokemon } from 'interfaces';
+import { IPokemon } from '../../../../interfaces';
 
 const PokemonCardMemoized = memo(PokemonCard);
 const PokemonDetailsModalMemoized = memo(PokemonDetailsModal);

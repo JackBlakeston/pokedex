@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { POKEMON_COLORS } from '../constants/pokemonColours';
+import { POKEMON_COLORS } from '../assets/data/pokemonColours';
 import { STAT_MAP } from '../constants/stringMaps';
 
-import { IAbilityRes, IStatRes, ITypeRes } from 'interfaces';
+import { IAbilityRes, IStatRes, ITypeRes } from '../interfaces';
 
 const IMAGES_URL = 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/';
 

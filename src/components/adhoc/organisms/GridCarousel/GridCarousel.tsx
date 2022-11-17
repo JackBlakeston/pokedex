@@ -12,26 +12,26 @@ import { SIZES } from '../../../../enums';
 const PokemonGridPageMemoized = memo(GridPage);
 
 const GridCarousel = () => {
-  const { pageClassNames, pageIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick } =
+  const { gridPagesClassNames, gridPagesIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick } =
     useCarousel(classes);
 
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
         <PokemonGridPageMemoized
-          idList={pageIdLists.pageA}
-          classNames={pageClassNames.pageA}
-          containerId='pageA'
+          idList={gridPagesIdLists.gridPageA}
+          classNames={gridPagesClassNames.gridPageA}
+          containerId='gridPageA'
         />
         <PokemonGridPageMemoized
-          idList={pageIdLists.pageB}
-          classNames={pageClassNames.pageB}
-          containerId='pageB'
+          idList={gridPagesIdLists.gridPageB}
+          classNames={gridPagesClassNames.gridPageB}
+          containerId='gridPageB'
         />
         <PokemonGridPageMemoized
-          idList={pageIdLists.pageC}
-          classNames={pageClassNames.pageC}
-          containerId='pageC'
+          idList={gridPagesIdLists.gridPageC}
+          classNames={gridPagesClassNames.gridPageC}
+          containerId='gridPageC'
         />
       </div>
       <div className={classes.buttonContainer}>
