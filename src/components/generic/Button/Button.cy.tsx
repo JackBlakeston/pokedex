@@ -8,7 +8,7 @@ const BTN_COLOR = 'rgb(255, 165, 0)';
 const mountButton = () => {
   mount(
     <Button
-      text='testBtn'
+      text='TEST'
       color={BTN_COLOR}
       onClick={() => {
         return;
@@ -25,18 +25,18 @@ describe('Button', () => {
 
   it('Renders text correctly', () => {
     mountButton();
-    cy.contains('testBtn');
+    cy.contains(/TEST/);
   });
 
   it('Renders the correct color', () => {
     mountButton();
-    cy.contains('testBtn').should('have.css', 'background-color', BTN_COLOR);
+    cy.contains(/TEST/).should('have.css', 'background-color', BTN_COLOR);
   });
 
   it('Fires callback function when clicked', () => {
-    const onClickSpy = cy.spy().as('onClickSpy');
-    mount(<Button text='testBtn' color='orange' onClick={onClickSpy} size='large' />);
-    cy.contains('testBtn').click();
-    cy.get('@onClickSpy').should('have.been.called');
+    const spy = cy.spy().as('spy');
+    mount(<Button text='TEST' color='orange' onClick={spy} size='large' />);
+    cy.contains(/TEST/).click();
+    cy.get('@spy').should('have.been.called');
   });
 });
