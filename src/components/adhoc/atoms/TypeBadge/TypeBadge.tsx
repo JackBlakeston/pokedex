@@ -12,7 +12,7 @@ const TypeBadge = ({ type }: IProps) => {
   };
 
   return (
-    <div className={classes.mainContainer} style={typeBadgeStyles}>
+    <div className={classes.mainContainer} style={typeBadgeStyles} data-testid='TypeBadge'>
       {type}
     </div>
   );

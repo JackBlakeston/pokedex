@@ -5,6 +5,8 @@ import { PokemonDetailsModal } from '../../';
 import { BULBASAUR } from '../../../../assets/mocks/bulbasaur';
 import { POKEMON_STATS } from '../../../../enums';
 
+const TEST_COLOR = 'rgb(108, 165, 132)';
+
 const mountPokemonDetailsModal = () => {
   const spy = cy.spy().as('spy');
   mount(<PokemonDetailsModal pokemon={BULBASAUR} isOpen={true} setIsOpen={spy} />);
@@ -29,9 +31,7 @@ describe('PokemonDetailsModal', () => {
 
   it('Renders correct color', () => {
     mountPokemonDetailsModal();
-    cy.get(`[data-testid="ColoredBackground"]`)
-      .should('be.visible')
-      .should('have.property', 'background-color', BULBASAUR.color);
+    cy.get('[data-testid="ColoredBackground"]').should('have.css', 'background-color', TEST_COLOR);
   });
 
   it('Loads and shows image', () => {
@@ -40,10 +40,7 @@ describe('PokemonDetailsModal', () => {
       .should('be.visible')
       .should('have.attr', 'src', BULBASAUR.imgUrl)
       .and(($img) => {
-        const imgElementArray: HTMLImageElement[] = Array.from($img);
-        imgElementArray.forEach((imgElement) => {
-          expect(imgElement.naturalWidth).to.be.greaterThan(0);
-        });
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
       });
   });
 

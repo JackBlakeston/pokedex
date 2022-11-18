@@ -1,6 +1,6 @@
 import { transformApiPokemonData } from './utils';
 
-import { POKEAPI_URL } from 'constants/strings';
+import { POKEAPI_URL } from '../constants/strings';
 
 import { IPokemon } from '../interfaces';
 

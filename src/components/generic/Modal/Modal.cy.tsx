@@ -28,7 +28,7 @@ describe('Modal', () => {
 
   it('Overlay click fires callback', () => {
     mountModal(true);
-    cy.get(`[data-testid="ModalOverlay"]`).click('topLeft');
+    cy.get('[data-testid="ModalOverlay"]').click('topLeft');
     cy.get('@spy').should('have.been.called');
   });
 

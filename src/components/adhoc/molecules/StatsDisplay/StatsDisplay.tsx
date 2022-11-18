@@ -11,7 +11,7 @@ interface IProps {
 const StatsDisplay = ({ pokemon }: IProps) => {
   const renderStatBars = () => {
     return pokemon.stats.map((stat, index) => {
-      return <StatBar statName={stat.name} value={stat.value} color={pokemon.color} key={index} />;
+      return <StatBar name={stat.name} value={stat.value} color={pokemon.color} key={index} />;
     });
   };
 

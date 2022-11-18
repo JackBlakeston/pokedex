@@ -2,6 +2,8 @@ import { ComponentStory } from '@storybook/react';
 
 import { StatBar as StoryStatBar } from '../../../components/adhoc';
 
+import { pikachuData } from '../../assets/pokemonData';
+
 import { POKEMON_STATS } from '../../../enums';
 
 export default {
@@ -27,7 +29,7 @@ const Template: ComponentStory<typeof StoryStatBar> = (args) => <StoryStatBar {.
 export const StatBar = Template.bind({});
 
 StatBar.args = {
-  statName: POKEMON_STATS.ATTACK,
-  value: 43,
-  color: 'blue', 
+  name: POKEMON_STATS.ATTACK,
+  value: pikachuData.stats[1].value,
+  color: pikachuData.color,
 };

@@ -1,9 +1,8 @@
 import { POKEMON_COLORS } from '../assets/data/pokemonColours';
 import { STAT_MAP } from '../constants/stringMaps';
-import { IMAGES_URL } from 'constants/strings';
+import { IMAGES_URL } from '../constants/strings';
 
-import { IResponseData } from 'interfaces/pokeapi';
-import { IAbilityRes, IStatRes, ITypeRes } from '../interfaces';
+import { IAbilityRes, IStatRes, ITypeRes, IResponseData } from '../interfaces';
 
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
   const heightMeters = data.height / 10;
