@@ -1,8 +1,8 @@
 import { ComponentStory } from '@storybook/react';
 
-import { TypeBadge as StoryTypeBadge } from 'components/adhoc';
+import { TypeBadge as StoryTypeBadge } from '../../../components/adhoc';
 
-import { POKEMON_TYPES } from 'enums';
+import { POKEMON_TYPES } from '../../../enums';
 
 export default {
   title: 'Components/Adhoc/Atoms/TypeBadge',

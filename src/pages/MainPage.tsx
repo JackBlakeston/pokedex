@@ -1,7 +1,7 @@
 import classes from './MainPage.module.scss';
 
-import { GridCarousel } from 'components/adhoc';
-import { ReactComponent as PokeballBackground } from 'assets/icons/pokeball2.svg';
+import { GridCarousel } from '../components/adhoc';
+import { ReactComponent as PokeballBackground } from '../assets/icons/pokeball2.svg';
 
 const MainPage = () => {
   return (

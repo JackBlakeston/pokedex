@@ -1,19 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { POKEMON_COLORS } from 'constants/pokemonColours';
-import { STAT_MAP } from 'constants/stringMaps';
+import { POKEMON_COLORS } from '../assets/data/pokemonColours';
+import { STAT_MAP } from '../constants/stringMaps';
+import { IMAGES_URL } from '../constants/strings';
 
-import { IAbilityRes, IStatRes, ITypeRes } from 'interfaces';
-
-const IMAGES_URL = 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/';
-
-interface IResponseData {
-  [key: string]: any;
-}
+import { IAbilityRes, IStatRes, ITypeRes, IResponseData } from '../interfaces';
 
 export const transformApiPokemonData = async (id: number, data: IResponseData) => {
-  const { name, height, weight } = data;
-
-  const formattedName = (name as string).split('-')[0];
+  const heightMeters = data.height / 10;
+  const weightKilograms = data.weight / 10;
+  const formattedName = (data.name as string).split('-')[0];
+  const idPadded = id.toString().padStart(3, '0');
+  const imgUrl = `${IMAGES_URL}${idPadded}.png`;
+  const color = POKEMON_COLORS[id as keyof typeof POKEMON_COLORS];
 
   const abilities = data?.abilities?.map((abilityRes: IAbilityRes) => {
     return abilityRes.ability.name;
@@ -28,10 +25,6 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     return typeRes.type.name.toUpperCase();
   });
 
-  const idPadded = id.toString().padStart(3, '0');
-  const imgUrl = `${IMAGES_URL}${idPadded}.png`;
-  const color = POKEMON_COLORS[id as keyof typeof POKEMON_COLORS];
-
   const pokemon = {
     id: idPadded,
     name: formattedName,
@@ -39,8 +32,8 @@ export const transformApiPokemonData = async (id: number, data: IResponseData) =
     stats,
     types,
     abilities,
-    weight,
-    height,
+    weight: weightKilograms,
+    height: heightMeters,
     color,
   };
 

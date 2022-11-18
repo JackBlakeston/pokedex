@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 
-import { PokemonImage as StoryPokemonImage } from 'components/adhoc';
-import { POKEMON_COLORS } from 'constants/pokemonColours';
+import { PokemonImage as StoryPokemonImage } from '../../../components/adhoc';
+
 import {
   bellsproutData,
   blastoiseData,
@@ -9,6 +9,9 @@ import {
   charizardData,
   pikachuData,
 } from '../../assets/pokemonData';
+import { POKEMON_COLORS } from '../../../assets/data/pokemonColours';
+
+import { SIZES } from '../../../enums';
 
 export default {
   title: 'Components/Adhoc/Atoms/PokemonImage',
@@ -26,7 +29,7 @@ const Template: ComponentStory<typeof StoryPokemonImage> = ({ ...args }) => <Sto
 export const Bulbasaur = Template.bind({});
 
 Bulbasaur.args = {
-  size: 'large',
+  size: SIZES.LARGE,
   color: bulbasaurData.color,
   imgUrl: bulbasaurData.imgUrl,
 };
@@ -34,7 +37,7 @@ Bulbasaur.args = {
 export const Pikachu = Template.bind({});
 
 Pikachu.args = {
-  size: 'large',
+  size: SIZES.LARGE,
   color: pikachuData.color,
   imgUrl: pikachuData.imgUrl,
 };
@@ -42,7 +45,7 @@ Pikachu.args = {
 export const Charizard = Template.bind({});
 
 Charizard.args = {
-  size: 'large',
+  size: SIZES.LARGE,
   color: charizardData.color,
   imgUrl: charizardData.imgUrl,
 };
@@ -50,7 +53,7 @@ Charizard.args = {
 export const Blastoise = Template.bind({});
 
 Blastoise.args = {
-  size: 'large',
+  size: SIZES.LARGE,
   color: blastoiseData.color,
   imgUrl: blastoiseData.imgUrl,
 };
@@ -58,7 +61,7 @@ Blastoise.args = {
 export const Bellsprout = Template.bind({});
 
 Bellsprout.args = {
-  size: 'large',
+  size: SIZES.LARGE,
   color: bellsproutData.color,
   imgUrl: bellsproutData.imgUrl,
 };

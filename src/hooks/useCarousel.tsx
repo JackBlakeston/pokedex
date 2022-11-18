@@ -1,63 +1,96 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import useCarouselIdPages from './useCarouselIdPages';
 
-interface IClasses {
-  readonly [key: string]: string;
-}
+import { SLIDE_ANIMATION_TIME } from '../constants/values';
+import { SPACE } from '../constants/strings';
 
-interface IPageClassNames {
-  pageA: string;
-  pageB: string;
-  pageC: string;
-}
+import { IClassNames, IPageClassNames, IPageIdLists } from '../interfaces';
+import { DIRECTIONS, GRID_PAGES } from '../enums';
 
-interface IPageIdLists {
-  pageA: number[];
-  pageB: number[];
-  pageC: number[];
-}
-
-const SLIDE_ANIMATION_TIME = 1000;
-
-const useCarousel = (classes: IClasses) => {
+const useCarousel = (classes: IClassNames) => {
   const { current, next, prev, goToNextPage, goToPrevPage } = useCarouselIdPages();
 
-  const [pageClassNames, setPageClassNames] = useState<IPageClassNames>({
-    pageA: classes.currentPage,
-    pageB: `${classes.nextPage}`,
-    pageC: classes.previousPage,
+  const [gridSlidesClassNames, setGridSlidesClassNames] = useState<IPageClassNames>({
+    gridSlideA: classes.currentPage,
+    gridSlideB: classes.nextPage,
+    gridSlideC: classes.previousPage,
   });
 
-  const [pageIdLists, setPageIdLists] = useState<IPageIdLists>({
-    pageA: current,
-    pageB: next,
-    pageC: prev,
+  const [gridSlidesIdLists, setGridSlidesIdLists] = useState<IPageIdLists>({
+    gridSlideA: current,
+    gridSlideB: next,
+    gridSlideC: prev,
   });
 
   useEffect(() => {
-    const currentPageId = document.getElementsByClassName(classes.currentPage)[0].id;
-    if (currentPageId === 'pageA') {
-      setPageIdLists({
-        pageA: current,
-        pageB: next,
-        pageC: prev,
+    const currentGridSlideId = document.getElementsByClassName(classes.currentPage)[0].id;
+    if (currentGridSlideId === GRID_PAGES.A) {
+      setGridSlidesIdLists({
+        gridSlideA: current,
+        gridSlideB: next,
+        gridSlideC: prev,
       });
     }
-    if (currentPageId === 'pageB') {
-      setPageIdLists({
-        pageA: prev,
-        pageB: current,
-        pageC: next,
+    if (currentGridSlideId === GRID_PAGES.B) {
+      setGridSlidesIdLists({
+        gridSlideA: prev,
+        gridSlideB: current,
+        gridSlideC: next,
       });
     }
-    if (currentPageId === 'pageC') {
-      setPageIdLists({
-        pageA: next,
-        pageB: prev,
-        pageC: current,
+    if (currentGridSlideId === GRID_PAGES.C) {
+      setGridSlidesIdLists({
+        gridSlideA: next,
+        gridSlideB: prev,
+        gridSlideC: current,
       });
     }
   }, [current, next, prev]);
+
+  const handleNextPageButtonClick = () => {
+    const pageAClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideA),
+      DIRECTIONS.NEXT,
+    );
+    const pageBClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideB),
+      DIRECTIONS.NEXT,
+    );
+    const pageCClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideC),
+      DIRECTIONS.NEXT,
+    );
+    setGridSlidesClassNames({
+      gridSlideA: pageCClassNamesAux,
+      gridSlideB: pageAClassNamesAux,
+      gridSlideC: pageBClassNamesAux,
+    });
+    disableButtonsDuringAnimation();
+    goToNextPage();
+  };
+
+  const handlePreviousPageButtonClick = () => {
+    const pageAClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideA),
+      DIRECTIONS.PREVIOUS,
+    );
+    const pageBClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideB),
+      DIRECTIONS.PREVIOUS,
+    );
+    const pageCClassNamesAux = addHiddenClassWhereNecessary(
+      removeHiddenClass(gridSlidesClassNames.gridSlideC),
+      DIRECTIONS.PREVIOUS,
+    );
+    setGridSlidesClassNames({
+      gridSlideA: pageBClassNamesAux,
+      gridSlideB: pageCClassNamesAux,
+      gridSlideC: pageAClassNamesAux,
+    });
+    disableButtonsDuringAnimation();
+    goToPrevPage();
+  };
 
   const disableButtonsDuringAnimation = useCallback(() => {
     const buttons = document.getElementsByClassName(classes.button);
@@ -71,47 +104,29 @@ const useCarousel = (classes: IClasses) => {
     }, SLIDE_ANIMATION_TIME);
   }, []);
 
+  const addHiddenClassWhereNecessary = useCallback(
+    (className: string, direction: DIRECTIONS.PREVIOUS | DIRECTIONS.NEXT) => {
+      if (direction === DIRECTIONS.NEXT && className === classes.nextPage) {
+        return `${className} ${classes.hidden}`;
+      }
+      if (direction === DIRECTIONS.PREVIOUS && className === classes.previousPage) {
+        return `${className} ${classes.hidden}`;
+      }
+      return className;
+    },
+    [],
+  );
+
   const removeHiddenClass = useCallback((className: string) => {
-    return className.split(' ')[0];
+    return className.split(SPACE)[0];
   }, []);
 
-  const addHiddenClassWhereNecessary = useCallback((className: string, direction: 'previous' | 'next') => {
-    if (direction === 'next' && className === classes.nextPage) {
-      return `${className} ${classes.hidden}`;
-    }
-    if (direction === 'previous' && className === classes.previousPage) {
-      return `${className} ${classes.hidden}`;
-    }
-    return className;
-  }, []);
-
-  const handleNextPageButtonClick = () => {
-    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageA), 'next');
-    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageB), 'next');
-    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageC), 'next');
-    setPageClassNames({
-      pageA: pageCClassNamesAux,
-      pageB: pageAClassNamesAux,
-      pageC: pageBClassNamesAux,
-    });
-    disableButtonsDuringAnimation();
-    goToNextPage();
+  return {
+    gridSlidesClassNames,
+    gridSlidesIdLists,
+    handleNextPageButtonClick,
+    handlePreviousPageButtonClick,
   };
-
-  const handlePreviousPageButtonClick = () => {
-    const pageAClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageA), 'previous');
-    const pageBClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageB), 'previous');
-    const pageCClassNamesAux = addHiddenClassWhereNecessary(removeHiddenClass(pageClassNames.pageC), 'previous');
-    setPageClassNames({
-      pageA: pageBClassNamesAux,
-      pageB: pageCClassNamesAux,
-      pageC: pageAClassNamesAux,
-    });
-    disableButtonsDuringAnimation();
-    goToPrevPage();
-  };
-
-  return { pageClassNames, pageIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick };
 };
 
 export default useCarousel;

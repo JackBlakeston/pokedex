@@ -1,11 +1,11 @@
 import { memo, useCallback, useState } from 'react';
 
-import classes from './GridPage.module.scss';
+import classes from './GridSlide.module.scss';
 
-import { PokemonDetailsModal } from 'components/adhoc';
-import { PokemonCard } from 'components/adhoc';
+import { PokemonDetailsModal } from '../../../../components/adhoc';
+import { PokemonCard } from '../../../../components/adhoc';
 
-import { IPokemon } from 'interfaces';
+import { IPokemon } from '../../../../interfaces';
 
 const PokemonCardMemoized = memo(PokemonCard);
 const PokemonDetailsModalMemoized = memo(PokemonDetailsModal);
@@ -16,7 +16,7 @@ interface IProps {
   containerId?: string;
 }
 
-const GridPage = ({ idList, classNames, containerId }: IProps) => {
+const GridSlide = ({ idList, classNames, containerId }: IProps) => {
   const [selectedPokemon, setSelectedPokemon] = useState<IPokemon | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -54,4 +54,4 @@ const GridPage = ({ idList, classNames, containerId }: IProps) => {
   );
 };
 
-export default GridPage;
+export default GridSlide;

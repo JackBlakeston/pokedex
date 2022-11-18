@@ -2,11 +2,13 @@ import { CSSProperties } from 'react';
 
 import classes from './Button.module.scss';
 
+import { SIZES } from '../../../enums';
+
 interface IProps {
   onClick: () => void;
   text: string;
   color: string;
-  size: 'small' | 'medium' | 'large';
+  size: SIZES;
   className?: string;
 }
 

@@ -3,7 +3,7 @@
 .mainContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  width: 100vw;
   row-gap: 5%;
   place-items: center;
+  width: 100vw;
 }

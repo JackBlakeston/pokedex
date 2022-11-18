@@ -1,4 +1,4 @@
-import { POKEMON_STATS } from 'enums';
+import { POKEMON_STATS } from '../enums';
 
 export const STAT_MAP = {
   hp: POKEMON_STATS.HP,

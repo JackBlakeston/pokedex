@@ -51,6 +51,21 @@ export enum POKEMON_STATS {
   SPECIAL_ATTACK = 'SpAtk',
   SPECIAL_DEFENSE = 'SpDef',
   SPEED = 'Speed',
-  ACCURACY = 'Acc',
-  EVASION = 'Ev',
+}
+
+export enum SIZES {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}
+
+export enum DIRECTIONS {
+  NEXT = 'Next',
+  PREVIOUS = 'Previous',
+}
+
+export enum GRID_PAGES {
+  A = 'gridSlideA',
+  B = 'gridSlideB',
+  C = 'gridSlideC',
 }

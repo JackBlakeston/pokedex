@@ -4,16 +4,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
+  width: fit-content;
   background: var(--buttonColor);
   color: #ffffff;
   box-shadow: $shadowMedium;
   border: 1px solid var(--buttonColor);
   border-radius: $borderRadiusMedium;
+  transition: 0.15s all ease, opacity 0.4s;
   cursor: pointer;
   user-select: none;
-  transition: 0.15s all ease, opacity 0.4s;
-  padding: 0 10px;
-  width: fit-content;
 
   &:hover,
   &:active {

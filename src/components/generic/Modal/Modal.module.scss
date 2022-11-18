@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.202);
-  z-index: 3;
+  z-index: 10;
 
   .modalBox {
     position: relative;
@@ -20,12 +20,11 @@
 
     .closeButton {
       position: absolute;
-      opacity: 0.7;
-      width: 30px;
       top: -17px;
       right: 0px;
+      width: 30px;
+      opacity: 0.7;
       cursor: pointer;
-      z-index: 3;
     }
   }
 }

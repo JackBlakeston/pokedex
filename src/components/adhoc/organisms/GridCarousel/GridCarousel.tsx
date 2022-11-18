@@ -2,50 +2,57 @@ import { memo } from 'react';
 
 import classes from './GridCarousel.module.scss';
 
-import { GridPage } from 'components/adhoc';
-import { Button } from 'components/generic';
+import { GridSlide } from '../../../../components/adhoc';
+import { Button } from '../../../../components/generic';
 
-import useCarousel from 'hooks/useCarousel';
+import useCarousel from '../../../../hooks/useCarousel';
 
-const PokemonGridPageMemoized = memo(GridPage);
+import { COLOR_PRIMARY } from '../../../../constants/colors';
+
+import { DIRECTIONS, GRID_PAGES, SIZES } from '../../../../enums';
+
+const PokemonGridSlideMemoized = memo(GridSlide);
 
 const GridCarousel = () => {
-  const { pageClassNames, pageIdLists, handleNextPageButtonClick, handlePreviousPageButtonClick } =
-    useCarousel(classes);
+  const {
+    gridSlidesClassNames,
+    gridSlidesIdLists,
+    handleNextPageButtonClick,
+    handlePreviousPageButtonClick,
+  } = useCarousel(classes);
 
   return (
     <div className={classes.mainContainer}>
       <div className={classes.gridContainer}>
-        <PokemonGridPageMemoized
-          idList={pageIdLists.pageA}
-          classNames={pageClassNames.pageA}
-          containerId='pageA'
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideA}
+          classNames={gridSlidesClassNames.gridSlideA}
+          containerId={GRID_PAGES.A}
         />
-        <PokemonGridPageMemoized
-          idList={pageIdLists.pageB}
-          classNames={pageClassNames.pageB}
-          containerId='pageB'
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideB}
+          classNames={gridSlidesClassNames.gridSlideB}
+          containerId={GRID_PAGES.B}
         />
-        <PokemonGridPageMemoized
-          idList={pageIdLists.pageC}
-          classNames={pageClassNames.pageC}
-          containerId='pageC'
+        <PokemonGridSlideMemoized
+          idList={gridSlidesIdLists.gridSlideC}
+          classNames={gridSlidesClassNames.gridSlideC}
+          containerId={GRID_PAGES.C}
         />
       </div>
       <div className={classes.buttonContainer}>
         <Button
           onClick={handlePreviousPageButtonClick}
-          text='Previous'
-          color='#F29C5E'
-          size='medium'
+          text={DIRECTIONS.PREVIOUS}
+          color={COLOR_PRIMARY}
+          size={SIZES.MEDIUM}
           className={classes.button}
         />
         <Button
           onClick={handleNextPageButtonClick}
-          text='Next'
-          // color='#9e84b7'
-          color='#F29C5E'
-          size='medium'
+          text={DIRECTIONS.NEXT}
+          color={COLOR_PRIMARY}
+          size={SIZES.MEDIUM}
           className={classes.button}
         />
       </div>

@@ -2,13 +2,13 @@
 
 .mainContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
   height: 30px;
   width: 110px;
+  margin: 0 5px;
+  color: white;
   border-radius: $borderRadiusMedium;
   box-shadow: $shadowSmall;
   opacity: 0.8;
-  margin: 0 5px;
 }

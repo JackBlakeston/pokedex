@@ -1,11 +1,11 @@
 import classes from './PokemonCard.module.scss';
 
-import { PokemonImage } from 'components/adhoc';
-import { TypesDisplay } from 'components/adhoc';
+import { PokemonImage, TypesDisplay } from '../../../../components/adhoc';
 
-import usePokemon from 'hooks/usePokemon';
+import usePokemon from '../../../../hooks/usePokemon';
 
-import { IPokemon } from 'interfaces';
+import { IPokemon } from '../../../../interfaces';
+import { SIZES } from '../../../../enums';
 
 interface IProps {
   pokemonId: number;
@@ -25,7 +25,7 @@ const PokemonCard = ({ pokemonId, onClick }: IProps) => {
     if (pokemon) {
       return (
         <div className={classes.mainContainer} onClick={handleClick} data-testid='Card'>
-          <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size='small' />
+          <PokemonImage color={pokemon.color} imgUrl={pokemon.imgUrl} size={SIZES.SMALL} />
           <div className={classes.displaysContainer}>
             <div className={classes.pokemonId}>#{pokemon.id}</div>
             <div className={classes.pokemonName}>{pokemon.name}</div>

@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import { TypesDisplay } from 'components/adhoc';
+import { TypesDisplay } from '../../../components/adhoc';
 
 import {
   bellsproutData,
@@ -8,7 +8,7 @@ import {
   bulbasaurData,
   charizardData,
   pikachuData,
-} from 'stories/assets/pokemonData';
+} from '../../../stories/assets/pokemonData';
 
 export default {
   title: 'Components/Adhoc/Molecules/TypesDisplay',

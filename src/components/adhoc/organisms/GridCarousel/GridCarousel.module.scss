@@ -1,15 +1,14 @@
 @import '/src/styles/variables';
 
 $slideAnimationTime: 1s;
-$pageHeightOffset: 100%;
 
 .mainContainer {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: center;
   align-items: center;
+  flex: 1;
 
   .gridContainer {
     position: relative;
@@ -20,12 +19,7 @@ $pageHeightOffset: 100%;
   .nextPage,
   .previousPage,
   .currentPage {
-    width: 100vw;
     transition: $slideAnimationTime linear transform, 0.5s ease-in opacity;
-  }
-
-  .currentPage {
-    z-index: 2;
   }
 
   .nextPage,
@@ -38,13 +32,13 @@ $pageHeightOffset: 100%;
   .nextPage {
     position: absolute;
     transform: translateX(100%);
-    height: $pageHeightOffset;
+    height: 100%;
   }
 
   .previousPage {
     position: absolute;
     transform: translateX(-100%);
-    height: $pageHeightOffset;
+    height: 100%;
   }
 
   .hidden {
@@ -59,10 +53,9 @@ $pageHeightOffset: 100%;
     margin-bottom: 30px;
 
     .disabledButton {
-      pointer-events: none;
       opacity: 0.6;
+      pointer-events: none;
       cursor: initial;
-      opacity: 0.6s;
     }
   }
 }
