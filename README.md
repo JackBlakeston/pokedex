@@ -2,7 +2,7 @@
 
 La pokedex minimalista
 
-[Pruébalo aquí!](https://beetbox.netlify.app/)
+[¡Pruébalo aquí!](https://pokemin.netlify.app/)
 
 ### Tecnologías
 
@@ -33,6 +33,7 @@ Componentes divididos en genéricos y adhoc. Los componentes adhoc están a su v
 
 - Bastantes conflictos y dificultades entre TS - storybook y TS - cypress
 - Webpack de repente dejó de funcionar con importes globales a la hora de montar storybook. Hubo que cambiar los importes globales por locales en toda la app, solo para que storybook funcionara
+- La fuente del título está un poco rota en algunos ordenadores y mete un margen grande
 - Los colores originalmente se calculaban en el momento con la librería Fast Average Color. Al estudiar la performance de la app, vi que era el mayor cuello de botella a la hora de cargar tarjetas de pokemon, así que hardcodeé los colores en un objeto
 - Hay algunos colores de pokemon que dan problemas de contraste. Hay demasiados pokemon como para gestionar esto bien en esta prueba
 - Puede haber pequeños bugs visuales en el carrusel si se hace mucho zoom, o en pantallas pequeñas
